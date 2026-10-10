@@ -1,0 +1,88 @@
+{
+  "version": 1,
+  "activeEventId": "women-2026",
+  "events": [
+    {
+      "id": "women-2026",
+      "title": "Gửi những người con gái tuyệt vời",
+      "occasion": "Ngày Phụ nữ Việt Nam",
+      "date": "2026-10-20",
+      "intro": "Có những điều thật đẹp, chỉ vì có bạn ở đây. Hôm nay, tụi mình gửi bạn một chút thương — và rất nhiều lời chúc từ trái tim.",
+      "videoUrl": "",
+      "musicUrl": "",
+      "theme": "rose",
+      "recipients": [
+        {
+          "id": "linh",
+          "name": "Linh",
+          "account": "linh",
+          "photos": [
+            "/demo/garden.svg",
+            "/demo/flowers.svg",
+            "/demo/sunset.svg",
+            "/demo/moon.svg"
+          ]
+        },
+        {
+          "id": "mai",
+          "name": "Mai",
+          "account": "mai",
+          "photos": [
+            "/demo/flowers.svg"
+          ]
+        },
+        {
+          "id": "an",
+          "name": "An",
+          "account": "an",
+          "photos": []
+        }
+      ],
+      "wishes": [
+        {
+          "id": "w1",
+          "recipientId": "linh",
+          "sender": "Minh",
+          "order": 1,
+          "message": "Chúc Linh một ngày 20/10 thật dịu dàng. Mong bạn luôn có những lý do nhỏ xíu để mỉm cười, những người thật lòng để ở cạnh, và đủ can đảm để làm điều mình yêu. Bạn xứng đáng với tất cả những điều đẹp đẽ ấy. 🌷"
+        },
+        {
+          "id": "w2",
+          "recipientId": "linh",
+          "sender": "Nhóm bạn thân",
+          "order": 2,
+          "message": "Cảm ơn bạn vì những lần lắng nghe, những cuộc hẹn chẳng cần lý do và những tiếng cười làm ngày bình thường trở nên đáng nhớ. Có bạn trong nhóm là một điều rất may mắn. Cứ là bạn nhé, tụi mình luôn ở đây. 💛"
+        },
+        {
+          "id": "w3",
+          "recipientId": "linh",
+          "sender": "",
+          "order": 3,
+          "message": "Mong những ngày tới, bạn được yêu thương thật nhiều. Mong mỗi giấc mơ bạn ấp ủ sẽ lớn lên cùng niềm vui, và mỗi buổi sáng đều bắt đầu bằng một chút bình yên. Happy 20/10! ✨"
+        },
+        {
+          "id": "w4",
+          "recipientId": "linh",
+          "sender": "Hà",
+          "order": 4,
+          "message": "Chúc cô gái luôn rực rỡ theo cách của riêng mình. Không cần trở thành ai khác, vì bạn đã rất tuyệt vời rồi. Hẹn bạn một buổi cà phê và kể nhau nghe đủ thứ trên đời nhé! ☕"
+        },
+        {
+          "id": "w5",
+          "recipientId": "mai",
+          "sender": "Những người bạn",
+          "order": 1,
+          "message": "Chúc Mai luôn vui vẻ, bình an và tự tin theo đuổi điều mình yêu. Gửi bạn một bó hoa và thật nhiều thương mến! 🌸"
+        },
+        {
+          "id": "w6",
+          "recipientId": "an",
+          "sender": "Tụi mình",
+          "order": 1,
+          "message": "Chúc An một ngày thật đẹp. Mong những điều tốt lành sẽ luôn tìm đến bạn. 💕"
+        }
+      ]
+    }
+  ],
+  "isDemo": true
+}

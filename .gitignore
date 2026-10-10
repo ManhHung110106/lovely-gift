@@ -1,0 +1,12 @@
+node_modules/
+.local-admin/
+artifacts/browser/
+artifacts/
+dist/
+public/offline-runtime.js
+public/offline-runtime.css
+artifacts/*.cjs
+*.local
+artifacts/qa/
+reference-*
+inspect-reference.cjs
