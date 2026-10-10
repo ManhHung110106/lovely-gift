@@ -3,8 +3,11 @@ import { build } from "esbuild";
 import { createRequire } from "node:module";
 import { createHash } from "node:crypto";
 import { join } from "node:path";
-const input = process.argv[2];
-const outputRoot = process.argv[3] || "public";
+// pnpm can forward the script separator while npm consumes it.
+const args = process.argv.slice(2);
+while (args[0] === "--") args.shift();
+const input = args[0];
+const outputRoot = args[1] || "public";
 if (!input) throw new Error("Dùng: npm run publish:data -- đường-dẫn-gói.json");
 await mkdir("artifacts", { recursive: true });
 await build({
