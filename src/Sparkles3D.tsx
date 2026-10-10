@@ -42,8 +42,11 @@ export function HeartDust() {
       let t: number;
       do { t = Math.random()*Math.PI*2; } while (Math.random() > .08+.92*Math.abs(Math.sin(t)));
       const r = Math.sqrt(Math.random());
-      const x = 16*Math.pow(Math.sin(t),3)*.13*r;
-      const y = (13*Math.cos(t)-5*Math.cos(2*t)-2*Math.cos(3*t)-Math.cos(4*t))*.13*r;
+      const lower = Math.max(0, -Math.cos(t));
+      // A linear sine term gives the lower tip a smooth, full curve.
+      // Its influence fades out before the upper lobes and central groove.
+      const x = (16*Math.pow(Math.sin(t),3)+10*Math.sin(t)*Math.pow(lower,3))*.13*r;
+      const y = ((13*Math.cos(t)-5*Math.cos(2*t)-2*Math.cos(3*t)-Math.cos(4*t))*.13+.25*Math.pow(lower,4))*r;
       const groove = 1-.38*Math.exp(-x*x/.22)*Math.max(0,Math.min(1,y/1.1));
       const depth = 1.3*Math.sqrt(1-r*r)*groove*(Math.random()<.5 ? -1 : 1);
       const fill = i%5 === 0 ? Math.random() : 1;
