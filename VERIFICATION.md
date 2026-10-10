@@ -40,14 +40,16 @@ Ngày cập nhật: 10/10/2026, Asia/Saigon.
 - `artifacts/qa/revisit-report.json`: vòng đời canvas, animation và âm thanh khi quay lại cảnh.
 - `artifacts/qa/concurrency-report.json`: 15 cảnh WebGL đồng thời trong bản production local.
 - `artifacts/qa/revision-report.json`: yêu cầu UI mới, chuyển trang sách, đăng nhập local, kiểm soát truy cập và thay nhạc.
+- `artifacts/qa/live-production-report.json`: kiểm thử trên URL Pages thật (tải lại, ảnh, cảnh cuối, tải HTML); các ca sự kiện lưu trữ/nội dung dài/YouTube dùng fixture hoặc API mock.
+- Workflow GitHub Actions đầu tiên thành công: https://github.com/ManhHung110106/lovely-gift/actions/runs/38014515426.
 
 Các báo cáo/ảnh là tài nguyên sinh trên máy và bị loại khỏi Git. Các script QA có trong `scripts/` để chạy lại. Không coi toàn bộ chức năng đạt chỉ từ một ảnh chụp hay build thành công.
 
 ## Chưa hoàn thành / chưa xác minh
 
-- Repository đích đã được cung cấp: `ManhHung110106/lovely-gift`. Remote đã cấu hình; push và Pages cần xác minh thành công trước khi ghi nhận phát hành công khai.
+- Repository `ManhHung110106/lovely-gift` đã push, workflow build/deploy thành công; URL công khai: https://manhhung110106.github.io/lovely-gift/. Dữ liệu hiện vẫn là demo.
 - Dữ liệu hiện tại là demo có tranh minh họa tự tạo. Chưa nạp danh sách, ảnh, lời chúc, video và nhạc thực của nhóm.
 - Chưa kiểm thử trên điện thoại thật/trình duyệt Zalo hoặc Facebook, chưa nghe đánh giá âm thanh thực từ người nhận.
 - Chưa xác minh quyền ghi Figma. UI đã được dựng và kiểm tra trực tiếp bằng code.
 
-Mục tiêu toàn bộ theo kế hoạch vẫn đang thực hiện. Bước còn lại là cấu hình repository, phát hành, nạp dữ liệu thật và kiểm tra với người nhận thật.
+Mục tiêu toàn bộ theo kế hoạch vẫn đang thực hiện. Bước còn lại là nạp dữ liệu thật và kiểm tra trên thiết bị/người nhận thật. Website demo đã phát hành.

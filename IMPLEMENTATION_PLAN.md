@@ -21,11 +21,11 @@ Website thiệp cho nhóm bạn dưới 50 người, khoảng 20 người nhận
 
 React + TypeScript + Vite. Three.js + React Three Fiber cho cảnh 3D, camera và hệ thống hạt. Thư viện lật sổ sẽ được chọn sau thử nghiệm nội dung dài và tiếng Việt.
 
-Phần người nhận đọc các gói JSON/tài nguyên đã xuất bản. Công cụ admin biên soạn bản nháp trên máy admin, lưu trong IndexedDB và xuất gói sự kiện. Bản nháp và bản đã phát hành có trạng thái riêng.
+Phần người nhận đọc các gói JSON/tài nguyên đã xuất bản. Công cụ admin biên soạn bản nháp trên máy admin, lưu trên máy chủ local sau đăng nhập (chuyển dữ liệu IndexedDB cũ khi cần) và xuất gói sự kiện. Bản nháp và bản đã phát hành có trạng thái riêng.
 
 Vì GitHub Pages không có backend để lưu dữ liệu dùng chung, phiên bản đầu thực hiện xuất bản qua repository: xuất gói -> cập nhật thư mục nội dung -> GitHub Actions kiểm tra/build -> triển khai. Admin cần có thao tác sao lưu/khôi phục bản nháp; không dựa vào dữ liệu trình duyệt làm bản lưu duy nhất.
 
-Admin có thể là entry riêng chỉ phục vụ khi chạy dự án trên máy developer. Quyền xuất bản được kiểm soát bằng quyền GitHub; tên truy cập người nhận không được dùng làm quyền quản trị.
+Admin local tại /admin có màn đăng nhập tài khoản/mật khẩu, xác thực bằng máy chủ local và API bảo vệ bản nháp. Không có nút admin trên giao diện thiệp. Quyền xuất bản được kiểm soát bằng quyền GitHub; tên truy cập người nhận không được dùng làm quyền quản trị.
 
 ### 2.2 Dữ liệu
 
@@ -98,7 +98,7 @@ Nghiệm thu: hoàn thành luồng trên desktop và điện thoại; không b�
 - [x] Nhập CSV với ánh xạ cột, preview và báo lỗi trước khi áp dụng.
 - [x] Sửa, xóa, sắp xếp lời chúc và xem trước thiệp từng người.
 - [x] Lưu/khôi phục bản nháp và xuất gói sự kiện.
-- [ ] Xuất bản qua repository theo hướng dẫn/command của dự án.
+- [x] Xuất bản qua repository theo hướng dẫn/command của dự án.
 
 Nghiệm thu: admin có thể sửa nội dung và ảnh mà không sửa mã ứng dụng; nội dung mới chỉ hiển thị công khai sau khi phát hành thành công.
 
@@ -118,8 +118,8 @@ Nghiệm thu: build/checks đạt; không có lỗi nghiêm trọng trong các l
 
 ### Giai đoạn F — Triển khai và bàn giao
 
-- [ ] Xác định repository GitHub và xác thực Git/GitHub CLI khi cần.
-- [ ] Thiết lập GitHub Actions và Pages; đúng base path của repository.
+- [x] Repository ManhHung110106/lovely-gift đã cấu hình, xác thực Git và push main thành công.
+- [x] GitHub Actions build/deploy đạt, Pages hoạt động tại https://manhhung110106.github.io/lovely-gift/.
 - [ ] Kiểm tra URL gốc, URL thiệp lưu trữ, refresh và đường dẫn ảnh/nhạc sau deploy.
 - [ ] Nạp dữ liệu thật của sự kiện, xem trước và kiểm tra danh sách tên truy cập.
 - [ ] Kiểm tra trên điện thoại thật, video/âm thanh và tải thiệp từ URL công khai.
@@ -131,7 +131,7 @@ Nghiệm thu: người nhận thật nhập tên và xem đúng thiệp trên Gi
 
 - Figma MCP: kết nối đã xác nhận; quyền tạo/chỉnh sửa chưa xác nhận.
 - Playwright MCP: đã cài và kiểm tra giao thức, mở trang, chụp desktop/mobile thành công.
-- Git/GitHub CLI: dùng cho repository/deploy; Git có sẵn, CLI/xác thực cần kiểm tra tại bước triển khai.
+- Git và GitHub REST API: push, cấu hình Pages và xác nhận workflow thành công; không cần GitHub CLI.
 - Công cụ tạo ảnh tích hợp: dùng khi cần hoa, phong thư hoặc hình trang trí riêng.
 - Người dùng đã chọn không cài GitHub plugin; không phụ thuộc plugin đó.
 

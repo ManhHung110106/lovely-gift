@@ -3,6 +3,7 @@ const fs = require("node:fs");
 const path = require("node:path");
 const assert = require("node:assert/strict");
 const output = path.resolve("artifacts/qa");
+const base = process.env.QA_BASE_URL || "http://127.0.0.1:4173/lovely-gift/";
 (async () => {
   const browser = await chromium.launch({ headless: true, channel: "msedge" });
   const report = [];
@@ -18,7 +19,7 @@ const output = path.resolve("artifacts/qa");
     p.on("response", (r) => {
       if (r.status() >= 400) failed.push(r.url());
     });
-    await p.goto("http://127.0.0.1:4173/lovely-gift/?admin=1");
+    await p.goto(base + "?admin=1");
     await p.locator("#account").waitFor();
     assert.equal(
       await p.getByRole("button", { name: "Quản trị", exact: true }).count(),
@@ -90,7 +91,7 @@ const output = path.resolve("artifacts/qa");
     );
     const a = await archived.newPage();
     a.on("pageerror", (e) => errors.push(e.message));
-    await a.goto("http://127.0.0.1:4173/lovely-gift/?event=women-2026");
+    await a.goto(base + "?event=women-2026");
     await a.locator("#account").fill("linh");
     await a.getByRole("button", { name: "Tìm thiệp của tôi" }).click();
     await a
@@ -130,7 +131,7 @@ const output = path.resolve("artifacts/qa");
     report.push(
       "Archived event access and 500-word pagination on mobile: passed",
     );
-    await a.goto("http://127.0.0.1:4173/lovely-gift/?event=women-2026");
+    await a.goto(base + "?event=women-2026");
     await a.locator("#account").fill("binh");
     await a.getByRole("button", { name: "Tìm thiệp của tôi" }).click();
     await a
@@ -179,7 +180,7 @@ const output = path.resolve("artifacts/qa");
       }),
     );
     v.on("pageerror", (e) => errors.push(e.message));
-    await v.goto("http://127.0.0.1:4173/lovely-gift/");
+    await v.goto(base);
     await v.locator("#account").fill("linh");
     await v.getByRole("button", { name: "Tìm thiệp của tôi" }).click();
     await v
@@ -199,9 +200,9 @@ const output = path.resolve("artifacts/qa");
     await video.close();
     assert.deepEqual(errors, []);
     fs.writeFileSync(
-      path.join(output, "production-report.json"),
+      path.join(output, process.env.QA_BASE_URL ? "live-production-report.json" : "production-report.json"),
       JSON.stringify(
-        { checkedAt: new Date().toISOString(), report, errors },
+        { checkedAt: new Date().toISOString(), base, report, errors },
         null,
         2,
       ),

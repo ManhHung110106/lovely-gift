@@ -73,6 +73,9 @@ const base = "http://127.0.0.1:5173";
     await p.locator(".book-spread").waitFor();
     await p.locator(".book-spread").click();
     assert(await p.locator(".turn-sheet").count());
+    await p.waitForTimeout(200);
+    assert.notEqual(await p.locator(".turn-sheet").evaluate(el => getComputedStyle(el).transform), "none");
+    await p.screenshot({path:"artifacts/qa/book-turn.png"});
     await p.waitForTimeout(750);
     while(await p.getByRole("button",{name:"Trang tiếp",exact:true}).count()) {
       await p.getByRole("button",{name:"Trang tiếp",exact:true}).click();

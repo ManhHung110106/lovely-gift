@@ -2,6 +2,8 @@
 
 Nền tảng thiệp cá nhân hóa cho nhóm bạn, triển khai dạng website tĩnh trên GitHub Pages.
 
+Website: https://manhhung110106.github.io/lovely-gift/ · Repository: https://github.com/ManhHung110106/lovely-gift
+
 ## Chạy trên máy
 
 ```powershell
