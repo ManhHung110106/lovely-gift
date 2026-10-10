@@ -193,6 +193,10 @@ export function Admin({
   function savePerson(e: React.FormEvent) {
     e.preventDefault();
     if (!person) return;
+    if (person.videoUrl && !videoId(person.videoUrl)) {
+      setNotice("Video riêng phải là đường dẫn YouTube hợp lệ.");
+      return;
+    }
     if (
       event.recipients.some(
         (p) =>
@@ -278,6 +282,7 @@ export function Admin({
       name: r.name?.trim() || r["Tên hiển thị"]?.trim() || "",
       account: r.account?.trim() || r["Tên truy cập"]?.trim() || "",
       photos: [],
+      ...(r.video_url !== undefined ? { videoUrl: r.video_url.trim() } : {}),
     }));
     if (parsedPeople.errors.length) {
       setNotice("Tệp CSV có lỗi cấu trúc. Kiểm tra số cột.");
@@ -285,7 +290,7 @@ export function Admin({
     }
     const merged = new Map(event.recipients.map((p) => [p.id, p]));
     entries.forEach((p) =>
-      merged.set(p.id, { ...p, photos: merged.get(p.id)?.photos || [] }),
+      merged.set(p.id, { ...merged.get(p.id), ...p, photos: merged.get(p.id)?.photos || [] }),
     );
     const next = {
       ...store,
@@ -623,7 +628,7 @@ export function Admin({
                   />
                 </label>
                 <label>
-                  Video YouTube
+                  Video YouTube mặc định
                   <input
                     placeholder="https://www.youtube.com/watch?v=…"
                     value={event.videoUrl}
@@ -911,7 +916,7 @@ export function Admin({
                   download(
                     importType === "wishes"
                       ? '\uFEFFwish_id,recipient_id,sender_name,message,order\nloi-chuc-01,linh,Minh,"Chúc bạn một ngày thật đẹp 🌷",1'
-                      : "\uFEFFrecipient_id,name,account\nlinh,Linh,linh",
+                      : "\uFEFFrecipient_id,name,account,video_url\nlinh,Linh,linh,",
                     "mau-" + importType + ".csv",
                     "text/csv;charset=utf-8",
                   )
@@ -1137,6 +1142,13 @@ export function Admin({
                 multiple
                 onChange={(e) => void addPhotos(e.target.files)}
               />
+            </label>
+            <label>
+              Video YouTube riêng
+              <input value={person.videoUrl || ""} placeholder="https://www.youtube.com/watch?v=…"
+                onChange={e => setPerson({ ...person, videoUrl: e.target.value.trim() })} />
+              <small>Để trống để dùng video chung của sự kiện. Thiệp sẽ ưu tiên video riêng của người này.</small>
+              {person.videoUrl && !videoId(person.videoUrl) && <small className="field-error">Đường dẫn YouTube chưa hợp lệ.</small>}
             </label>
             <div className="photo-grid">
               {person.photos.map((p, i) => (

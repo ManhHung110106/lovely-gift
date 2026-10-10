@@ -55,6 +55,7 @@ fs.mkdirSync(out, { recursive: true });
     report.push("Photo upload saved to recipient");
     await linh.getByRole("button", { name: "Chỉnh sửa", exact: true }).click();
     await p.getByLabel("Tên hiển thị", { exact: true }).fill("Linh vừa lưu");
+    await p.getByLabel("Video YouTube riêng", { exact: false }).fill("https://youtu.be/recipient01");
     await p.getByRole("button", { name: "Lưu người nhận" }).click();
     await p.getByRole("button", { name: "Xem thiệp Linh vừa lưu", exact: true }).click();
     await p.getByRole("button", { name: "Về admin", exact: false }).click();
@@ -62,6 +63,9 @@ fs.mkdirSync(out, { recursive: true });
     await p.reload();
     await p.getByRole("button", { name: "Người nhận", exact: false }).first().click();
     await p.getByRole("heading", { name: "Linh vừa lưu", exact: true }).waitFor();
+    await p.locator(".recipient-card").filter({ has: p.getByRole("heading", { name: "Linh vừa lưu", exact: true }) }).getByRole("button", {name:"Chỉnh sửa",exact:true}).click();
+    assert.equal(await p.getByLabel("Video YouTube riêng", {exact:false}).inputValue(), "https://youtu.be/recipient01");
+    await p.getByRole("dialog").getByRole("button", {name:"Đóng",exact:true}).click();
     report.push("Immediate preview preserves the latest edit across admin reload");
     await p
       .getByRole("navigation")

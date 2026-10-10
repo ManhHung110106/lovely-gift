@@ -2470,3 +2470,7 @@ img {
 .login-form { max-width:440px; }
 .login-form > label { font-size:14px; }
 .account-input input { font-size:16px; }
+.intro-letter-button { display:flex; flex-direction:column; align-items:center; color:#513443; width:min(640px,100%); text-align:center; cursor:pointer; transition:transform .35s,box-shadow .35s; }
+.intro-letter-button:hover { transform:translateY(-4px); box-shadow:0 28px 70px #180a2366; }
+.intro-letter-button:focus-visible { outline:3px solid #f1b6c9; outline-offset:7px; }
+.scene-video .intro-scene { min-height:calc(100svh - 100px); justify-content:center; }

@@ -4,121 +4,7 @@ import { useEffect, useMemo, useRef, useState } from "react";
 import * as THREE from "three";
 import type { GiftEvent, Recipient } from "./types";
 import { wishesFor } from "./model";
-function HeartDust() {
-  const ref = useRef<THREE.Group>(null);
-  const positions = useMemo(() => {
-    const a = new Float32Array(4200 * 3);
-    for (let i = 0; i < 4200; i++) {
-      const t = Math.random() * Math.PI * 2;
-      const r = Math.sqrt(Math.random());
-      a[i * 3] = 16 * Math.pow(Math.sin(t), 3) * r * 0.13;
-      a[i * 3 + 1] =
-        (13 * Math.cos(t) -
-          5 * Math.cos(2 * t) -
-          2 * Math.cos(3 * t) -
-          Math.cos(4 * t)) *
-          r *
-          0.13 +
-        1.1;
-      a[i * 3 + 2] = (Math.random() - 0.5) * 0.65;
-    }
-    return a;
-  }, []);
-  const outline = useMemo(() => {
-    const points = new Float32Array(180 * 3);
-    for (let i = 0; i < 180; i++) {
-      const t = (i / 180) * Math.PI * 2;
-      points.set(
-        [
-          16 * Math.pow(Math.sin(t), 3) * 0.13,
-          (13 * Math.cos(t) -
-            5 * Math.cos(2 * t) -
-            2 * Math.cos(3 * t) -
-            Math.cos(4 * t)) *
-            0.13 +
-            1.1,
-          0.05,
-        ],
-        i * 3,
-      );
-    }
-    return points;
-  }, []);
-  useFrame(({ clock }) => {
-    if (ref.current) {
-      ref.current.rotation.y = Math.sin(clock.elapsedTime * 0.25) * 0.25;
-      ref.current.scale.setScalar(
-        1 + Math.sin(clock.elapsedTime * 1.5) * 0.035,
-      );
-    }
-  });
-  return (
-    <group ref={ref}>
-      <points>
-        <bufferGeometry>
-          <bufferAttribute attach="attributes-position" args={[positions, 3]} />
-        </bufferGeometry>
-        <pointsMaterial
-          size={0.024}
-          color="#f2a1bd"
-          toneMapped={false}
-          transparent
-          opacity={0.85}
-          depthWrite={false}
-          blending={THREE.AdditiveBlending}
-        />
-      </points>
-      <lineLoop>
-        <bufferGeometry>
-          <bufferAttribute attach="attributes-position" args={[outline, 3]} />
-        </bufferGeometry>
-        <lineBasicMaterial color="#d985ab" transparent opacity={0.27} />
-      </lineLoop>
-    </group>
-  );
-}
-function Fireworks() {
-  const ref = useRef<THREE.Points>(null);
-  const particles = useMemo(() => {
-    const p = new Float32Array(900 * 3);
-    const dirs = new Float32Array(900 * 3);
-    for (let i = 0; i < 900; i++) {
-      const theta = Math.random() * Math.PI * 2;
-      const z = Math.random() * 2 - 1;
-      const rad = Math.sqrt(1 - z * z);
-      dirs.set([Math.cos(theta) * rad, Math.sin(theta) * rad, z], i * 3);
-    }
-    return { p, dirs };
-  }, []);
-  useFrame(({ clock }) => {
-    const age = (clock.elapsedTime % 6) / 6;
-    if (!ref.current) return;
-    const arr = ref.current.geometry.attributes.position.array as Float32Array;
-    for (let i = 0; i < 900; i++) {
-      const group = i % 3;
-      arr[i * 3] = [-4, 4, 0][group] + particles.dirs[i * 3] * age * 2;
-      arr[i * 3 + 1] =
-        [2, 1.5, 3.5][group] + particles.dirs[i * 3 + 1] * age * 2 - age * age;
-      arr[i * 3 + 2] = -2 + particles.dirs[i * 3 + 2] * age * 2;
-    }
-    ref.current.geometry.attributes.position.needsUpdate = true;
-    (ref.current.material as THREE.PointsMaterial).opacity = (1 - age) * 0.75;
-  });
-  return (
-    <points ref={ref}>
-      <bufferGeometry>
-        <bufferAttribute attach="attributes-position" args={[particles.p, 3]} />
-      </bufferGeometry>
-      <pointsMaterial
-        size={0.027}
-        color="#efd29a"
-        transparent
-        depthWrite={false}
-        blending={THREE.AdditiveBlending}
-      />
-    </points>
-  );
-}
+import { HeartDust, Fireworks, Starfield, Meteors } from "./Sparkles3D";
 function Photo({
   src,
   index,
@@ -210,25 +96,11 @@ function WishLabel({ message }: { message: string }) {
     </mesh>
   );
 }
-function Starfield() {
-  const pos = useMemo(
-    () => Float32Array.from({ length: 1800 }, () => (Math.random() - 0.5) * 35),
-    [],
-  );
-  return (
-    <points>
-      <bufferGeometry>
-        <bufferAttribute attach="attributes-position" args={[pos, 3]} />
-      </bufferGeometry>
-      <pointsMaterial size={0.022} color="#d7bfa1" transparent opacity={0.6} />
-    </points>
-  );
-}
 function CameraFit() {
   const { camera, size } = useThree();
   useEffect(() => {
     const narrow = size.width / size.height < 0.8;
-    camera.position.set(0, narrow ? 2.5 : 1.5, narrow ? 17 : 10);
+    camera.position.set(0, 0.5, narrow ? 17 : 10);
     if (camera instanceof THREE.PerspectiveCamera) {
       camera.fov = narrow ? 60 : 48;
       camera.updateProjectionMatrix();
@@ -297,6 +169,7 @@ export function Garden({
       <HeartDust />
       <Fireworks />
       <Starfield />
+      <Meteors />
       {recipient.photos.map((p, i) => (
         <Photo
           key={`${p}-${i}`}
@@ -318,9 +191,9 @@ export function Garden({
         autoRotateSpeed={0.3}
         minDistance={6}
         maxDistance={23}
-        maxPolarAngle={Math.PI * 0.78}
-        minPolarAngle={0.35}
-        target={[0, 0, 0]}
+        maxPolarAngle={Math.PI / 2 + 0.4}
+        minPolarAngle={Math.PI / 2 - 0.4}
+        target={[0, 0.5, 0]}
       />
     </Canvas>
   );

@@ -27,6 +27,8 @@ Bản nháp được lưu vào `.local-admin/draft.json` bởi máy chủ đã x
 
 Tên truy cập và tên hiển thị là hai trường riêng: ví dụ tên truy cập `Nguyễn Linh 01/01/2000`, tên hiển thị `Linh`. Người nhận nhập tên truy cập để mở đúng thiệp; thiệp chỉ dùng tên hiển thị. Trong Sự kiện → Nhạc nền, chọn tệp nhạc mới để thay bài hát, nghe thử bằng bộ phát và xuất bản lại để cập nhật website.
 
+Mở thư luôn hiện lời chúc chung trước. Trong Người nhận → Chỉnh sửa → Video YouTube riêng, đặt video cho từng người; để trống sẽ dùng video mặc định của sự kiện. CSV Người nhận hỗ trợ cột tùy chọn `video_url`; bỏ cột này sẽ giữ video đã cấu hình, còn ô trống trong cột này sẽ xóa video riêng. Bấm lời chúc để mở trang video; nút mở sổ chỉ xuất hiện sau trạng thái kết thúc từ YouTube. Tạm dừng video không mở khóa sổ. Nếu chưa cấu hình video, bấm lời chúc vào sổ; bản HTML offline cũng giữ được khả năng đọc sổ khi YouTube không có kết nối.
+
 Ảnh tải lên được tối ưu thành WebP. Khi cập nhật dữ liệu bằng `publish:data`, ảnh/nhạc nhúng được tách thành tệp trong `public/media`, đặt tên theo nội dung để dùng chung khi trùng. Website chỉ tải ảnh của người nhận đang xem; nhớ commit cả thư mục media và content.
 
 Một spreadsheet có thể dùng hai tab. Người nhận: `recipient_id,name,account`. Lời chúc: `wish_id,recipient_id,sender_name,message,order`. Ba cột tiếng Việt Người gửi/Nội dung/Người nhận cũng được hỗ trợ qua đối chiếu cột.

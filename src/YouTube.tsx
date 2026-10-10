@@ -5,13 +5,17 @@ export { videoId } from "./media";
 export function YouTube({
   url,
   onPlaying,
+  onEnded,
 }: {
   url: string;
   onPlaying: (playing: boolean) => void;
+  onEnded?: () => void;
 }) {
   const holder = useRef<HTMLDivElement>(null);
   const callback = useRef(onPlaying);
   callback.current = onPlaying;
+  const ended = useRef(onEnded);
+  ended.current = onEnded;
   const [blocked, setBlocked] = useState(false);
   useEffect(() => {
     let player: any;
@@ -26,7 +30,10 @@ export function YouTube({
         videoId: id,
         playerVars: { playsinline: 1, rel: 0 },
         events: {
-          onStateChange: (e: any) => callback.current(e.data === 1),
+          onStateChange: (e: any) => {
+            callback.current(e.data === 1);
+            if (e.data === 0) ended.current?.();
+          },
           onAutoplayBlocked: () => setBlocked(true),
           onError: () => setBlocked(true),
         },
@@ -58,7 +65,7 @@ export function YouTube({
       {blocked && (
         <p className="video-hint">
           <Play size={14} /> Chạm nút phát trong video. Nếu video không khả
-          dụng, bạn vẫn có thể tiếp tục.
+          dụng, hãy kiểm tra kết nối hoặc liên hệ người gửi.
         </p>
       )}
     </div>

@@ -23,7 +23,7 @@ import { YouTube } from "./YouTube";
 import { exportGift } from "./export";
 import { Admin } from "./Admin";
 import { AdminLogin } from "./AdminLogin";
-type Scene = "login" | "envelope" | "intro" | "book" | "garden";
+type Scene = "login" | "envelope" | "intro" | "video" | "book" | "garden";
 export function App({
   store,
   adminEnabled = false,
@@ -51,6 +51,7 @@ export function App({
     snapshot?.recipient || null,
   );
   const person = preview?.recipient || recipient;
+  const videoUrl = person?.videoUrl || event?.videoUrl || "";
   const [scene, setScene] = useState<Scene>(snapshot ? "envelope" : "login");
   const [account, setAccount] = useState("");
   const [error, setError] = useState("");
@@ -62,6 +63,7 @@ export function App({
   const [dock, setDock] = useState(false);
   const [music, setMusic] = useState(false);
   const [videoPlaying, setVideoPlaying] = useState(false);
+  const [videoEnded, setVideoEnded] = useState(false);
   const [audioError, setAudioError] = useState(false);
   const [busy, setBusy] = useState(false);
   const [notice, setNotice] = useState("");
@@ -180,10 +182,6 @@ export function App({
         <a href={import.meta.env.BASE_URL}>Về trang chủ</a>
       </main>
     );
-  const displayDate = new Date(event.date + "T12:00:00").toLocaleDateString(
-    "vi-VN",
-    { day: "2-digit", month: "2-digit" },
-  );
   return (
     <main className={`gift-app theme-${event.theme} scene-${scene}`}>
       <Petals />
@@ -313,9 +311,21 @@ export function App({
           <h1>
             Hôm nay, <em>bạn là điều đặc biệt.</em>
           </h1>
-          {event.videoUrl ? (
+          <button className="intro-letter intro-letter-button" onClick={() => {
+            if (videoUrl && !(snapshot && !navigator.onLine)) { setVideoEnded(false); setScene("video"); }
+            else setScene("book");
+          }} aria-label={videoUrl && !(snapshot && !navigator.onLine) ? "Xem video dành cho bạn" : "Mở sổ lời chúc"}>
+            <Heart size={26} />
+            <p>{event.intro}</p>
+            <span className="handwritten">Thương bạn, thật nhiều.</span>
+          </button>
+        </section>
+      )}
+      {scene === "video" && person && (
+        <section className="intro-scene scene-enter">
             <YouTube
-              url={event.videoUrl}
+              url={videoUrl}
+              onEnded={() => setVideoEnded(true)}
               onPlaying={(playing) => {
                 setVideoPlaying(playing);
                 if (playing) audio.pause();
@@ -323,25 +333,14 @@ export function App({
                   void audio.play().catch(() => setAudioError(true));
               }}
             />
-          ) : (
-            <div className="intro-letter">
-              <span className="letter-date">
-                {displayDate} · Một ngày dành cho bạn
-              </span>
-              <Heart size={26} />
-              <p>{event.intro}</p>
-              <span className="handwritten">Thương bạn, thật nhiều.</span>
-            </div>
-          )}
-          {snapshot && event.videoUrl && (
+          {snapshot && videoUrl && (
             <p className="subtle">
-              Video YouTube cần kết nối Internet. Bạn có thể tiếp tục đọc lời
-              chúc khi offline.
+              Video YouTube cần kết nối Internet.
             </p>
           )}
-          <button className="primary-button" onClick={() => setScene("book")}>
+          {videoEnded && <button className="primary-button" onClick={() => setScene("book")}>
             Mở sổ lời chúc <ArrowRight size={16} />
-          </button>
+          </button>}
         </section>
       )}
       {scene === "book" && person && (

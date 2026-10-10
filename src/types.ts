@@ -3,6 +3,7 @@ export interface Recipient {
   name: string;
   account: string;
   photos: string[];
+  videoUrl?: string;
 }
 export interface Wish {
   id: string;

@@ -9,6 +9,14 @@ import {
 } from "./model";
 import { demo } from "./data";
 describe("Recipient mapping and import", () => {
+  it("accepts legacy recipients and validates each personal YouTube URL", () => {
+    const store = structuredClone(demo);
+    expect(validateStore(store)).toEqual([]);
+    store.events[0].recipients[0].videoUrl = "https://youtu.be/recipient01";
+    expect(validateStore(store)).toEqual([]);
+    store.events[0].recipients[0].videoUrl = "javascript:alert(1)";
+    expect(validateStore(store).join(" ")).toContain("Video riêng");
+  });
   it("normalizes Vietnamese unicode, casing and surrounding space without stripping accents", () => {
     expect(normalize("  LÍNH ")).toBe("lính");
     expect(normalize("Linh")).not.toBe(normalize("Lính"));

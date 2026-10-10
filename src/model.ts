@@ -79,6 +79,8 @@ export function validateStore(input: unknown): string[] {
       )
         errors.push("Người nhận hoặc ảnh không hợp lệ.");
       people.add(r.id);
+      if (r.videoUrl !== undefined && (typeof r.videoUrl !== "string" || (r.videoUrl && !videoId(r.videoUrl))))
+        errors.push("Video riêng của người nhận phải là đường dẫn YouTube hợp lệ.");
     }
     for (const w of e.wishes) {
       if (!w || typeof w !== "object") {

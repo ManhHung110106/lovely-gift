@@ -4,6 +4,10 @@ Ngày cập nhật: 10/10/2026, Asia/Saigon.
 
 ## Đã xây và kiểm chứng bằng trình duyệt
 
+- Trái tim hạt đã đổi sang khối căng phồng với hai múi, rãnh giữa và chóp dưới theo ảnh bổ sung, có mặt trước/sau; không còn viền lineLoop 2D. Shader hạt có halo/twinkle, 8 cụm pháo hoa lệch nhịp và 6 đuôi sao băng; đã xem góc chính diện/góc nghiêng và kiểm tra không có lỗi shader.
+- Lời chúc chung và video là hai trang riêng; sổ chỉ mở sau YouTube ENDED, chưa mở ở PLAYING/PAUSED. Ca này dùng API mock, chưa xác minh video thật của sự kiện vì URL chưa được cung cấp.
+- Video YouTube riêng được cấu hình trong từng người nhận; video riêng ưu tiên hơn mặc định của sự kiện, theo đúng người đang xem và được giữ trong snapshot HTML. Đường dẫn được kiểm tra khi lưu/import.
+
 - Theo chỉnh sửa mới: bỏ subtitle/chỉ dẫn được đánh dấu, bỏ nút admin khỏi trang thiệp, đổi nhãn nhập tên; tên truy cập có thể chứa họ tên/ngày sinh, tên hiển thị độc lập.
 - Sách có hiệu ứng mở bìa và lật trang 700ms; click trang để sang trang kế tiếp, click trang cuối vào cảnh 3D. Kiểm thử phát hiện class animation và hoàn thành luồng sau animation.
 - Admin local tại `/admin`: đăng nhập đúng/sai, chặn API đọc/lưu khi chưa đăng nhập, chặn tải tệp credentials qua HTTP, cookie phiên và đăng xuất đã kiểm chứng. Thay hai tệp nhạc khác nhau, reload và đối chiếu bản nháp trên máy chủ đạt.
@@ -31,7 +35,7 @@ Ngày cập nhật: 10/10/2026, Asia/Saigon.
 ## Bằng chứng
 
 - `npm run check`: TypeScript đạt.
-- `npm test`: 9 kiểm tra dữ liệu/import/phân trang đạt.
+- `npm test`: 10 kiểm tra dữ liệu/import/phân trang đạt.
 - `npm run build` với `PAGES_BASE=/lovely-gift/`: đạt.
 - `artifacts/qa/report.json`: luồng thiệp, offline, admin persistence, mobile.
 - `artifacts/qa/admin-report.json`: admin, CSV, backup, 20 tài khoản, 15 phiên.
@@ -39,6 +43,7 @@ Ngày cập nhật: 10/10/2026, Asia/Saigon.
 - `artifacts/qa/media-report.json`: phát tệp WAV, tách media, tải ảnh từ đường dẫn Pages.
 - `artifacts/qa/revisit-report.json`: vòng đời canvas, animation và âm thanh khi quay lại cảnh.
 - `artifacts/qa/concurrency-report.json`: 15 cảnh WebGL đồng thời trong bản production local.
+- `artifacts/qa/sparkles-report.json`: góc chính diện/góc xoay, kiểm tra lỗi shader và JavaScript.
 - `artifacts/qa/revision-report.json`: yêu cầu UI mới, chuyển trang sách, đăng nhập local, kiểm soát truy cập và thay nhạc.
 - `artifacts/qa/live-production-report.json`: kiểm thử trên URL Pages thật (tải lại, ảnh, cảnh cuối, tải HTML); các ca sự kiện lưu trữ/nội dung dài/YouTube dùng fixture hoặc API mock.
 - Workflow GitHub Actions đầu tiên thành công: https://github.com/ManhHung110106/lovely-gift/actions/runs/38014515426.

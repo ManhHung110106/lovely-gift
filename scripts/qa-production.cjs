@@ -2,6 +2,7 @@ const { chromium } = require("../tools/mcp/node_modules/playwright");
 const fs = require("node:fs");
 const path = require("node:path");
 const assert = require("node:assert/strict");
+const { pathToFileURL } = require("node:url");
 const output = path.resolve("artifacts/qa");
 const base = process.env.QA_BASE_URL || "http://127.0.0.1:4173/lovely-gift/";
 (async () => {
@@ -170,13 +171,14 @@ const base = process.env.QA_BASE_URL || "http://127.0.0.1:4173/lovely-gift/";
       fs.readFileSync("public/content/site.json", "utf8"),
     );
     videoData.events[0].videoUrl = "https://youtu.be/aqz-KE-bpKQ";
+    videoData.events[0].recipients[0].videoUrl = "https://youtu.be/recipient01";
     await video.route("**/content/site.json", (r) =>
       r.fulfill({ json: videoData }),
     );
     await video.route("https://www.youtube.com/iframe_api", (r) =>
       r.fulfill({
         contentType: "application/javascript",
-        body: `window.YT={Player:class {constructor(el,opts){window.__ytOptions=opts;el.innerHTML='<button id="mock-play">Play video</button>';el.querySelector('button').onclick=()=>opts.events.onStateChange({data:1});}destroy(){}}};window.onYouTubeIframeAPIReady();`,
+        body: `window.YT={Player:class {constructor(el,opts){window.__ytOptions=opts;el.innerHTML='<button id="mock-play">Play video</button><button id="mock-end">End video</button>';el.querySelector('#mock-play').onclick=()=>opts.events.onStateChange({data:1});el.querySelector('#mock-end').onclick=()=>opts.events.onStateChange({data:0});}destroy(){}}};window.onYouTubeIframeAPIReady();`,
       }),
     );
     v.on("pageerror", (e) => errors.push(e.message));
@@ -186,17 +188,58 @@ const base = process.env.QA_BASE_URL || "http://127.0.0.1:4173/lovely-gift/";
     await v
       .getByRole("button", { name: "Mở phong thư", exact: true })
       .click({ force: true });
+    assert.equal(await v.locator(".letter-date").count(), 0);
+    assert.equal(await v.locator("#mock-play").count(), 0);
+    await v.getByRole("button", { name: "Xem video dành cho bạn" }).click();
+    assert.equal(await v.getByRole("button", { name: "Mở sổ lời chúc", exact: true }).count(), 0);
     await v.locator("#mock-play").click();
+    assert.equal(await v.evaluate(() => window.__ytOptions.videoId), "recipient01");
     assert.equal(
       await v.evaluate(() => window.__audioStates.at(-1)),
       "suspend",
     );
+    assert.equal(await v.getByRole("button", { name: "Mở sổ lời chúc", exact: true }).count(), 0);
+    await v.evaluate(() => window.__ytOptions.events.onStateChange({data:2}));
+    assert.equal(await v.getByRole("button", { name: "Mở sổ lời chúc", exact: true }).count(), 0);
+    await v.locator("#mock-end").click();
     await v.getByRole("button", { name: "Mở sổ lời chúc" }).click();
     await v.waitForTimeout(300);
     assert.equal(await v.evaluate(() => window.__audioStates.at(-1)), "resume");
     report.push(
-      "YouTube play/leave pauses/resumes background audio (mocked API): passed",
+      "Separate greeting/video; book hidden until YouTube ENDED, still hidden on pause; audio pause/resume (mocked API): passed",
     );
+    await v.locator(".book-cover").click();
+    await v.locator(".book-spread").waitFor();
+    while (await v.getByRole("button", {name:"Trang tiếp",exact:true}).count()) {
+      await v.getByRole("button", {name:"Trang tiếp",exact:true}).click();
+      await v.waitForTimeout(750);
+    }
+    await v.getByRole("button", {name:"Mở không gian kỷ niệm"}).click();
+    await v.locator(".garden-dock").waitFor();
+    const videoDownload = v.waitForEvent("download");
+    await v.getByRole("button", {name:"Giữ lại món quà"}).click();
+    const offlinePath = path.join(output,"youtube-offline.html");
+    await (await videoDownload).saveAs(offlinePath);
+    const offlineContext = await browser.newContext({offline:true});
+    const offlinePage = await offlineContext.newPage();
+    const offlineRequests=[];
+    offlinePage.on("request", r => {if(/^https?:/.test(r.url()))offlineRequests.push(r.url());});
+    offlinePage.on("pageerror", e=>errors.push(e.message));
+    await offlinePage.goto(pathToFileURL(offlinePath).href);
+    await offlinePage.getByRole("button",{name:"Mở phong thư",exact:true}).click({force:true});
+    await offlinePage.getByRole("button",{name:"Mở sổ lời chúc",exact:true}).click();
+    await offlinePage.locator(".book-cover").waitFor();
+    assert.deepEqual(offlineRequests,[]);
+    await offlineContext.close();
+    report.push("Exported card with configured YouTube remains readable offline without external requests");
+    await v.goto(base);
+    await v.locator("#account").fill("mai");
+    await v.getByRole("button", {name:"Tìm thiệp của tôi"}).click();
+    await v.getByRole("button", {name:"Mở phong thư",exact:true}).click({force:true});
+    await v.getByRole("button", {name:"Xem video dành cho bạn"}).click();
+    await v.locator("#mock-play").waitFor();
+    assert.equal(await v.evaluate(() => window.__ytOptions.videoId), "aqz-KE-bpKQ");
+    report.push("Personal video takes priority; another recipient uses the event default video");
     await video.close();
     assert.deepEqual(errors, []);
     fs.writeFileSync(
