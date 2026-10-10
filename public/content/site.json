@@ -4,7 +4,7 @@
   "events": [
     {
       "id": "women-2026",
-      "title": "Gửi những người con gái tuyệt vời",
+      "title": "SoDiTEC",
       "occasion": "Ngày Phụ nữ Việt Nam",
       "date": "2026-10-20",
       "intro": "Có những điều thật đẹp, chỉ vì có bạn ở đây. Hôm nay, tụi mình gửi bạn một chút thương — và rất nhiều lời chúc từ trái tim.",
@@ -17,10 +17,10 @@
           "name": "Linh",
           "account": "linh",
           "photos": [
-            "/demo/garden.svg",
-            "/demo/flowers.svg",
-            "/demo/sunset.svg",
-            "/demo/moon.svg"
+            "/media/e84ad58ff48483e80ab085bb.svg",
+            "/media/651aaf5c063fcb842da8746c.svg",
+            "/media/57ca6b086c7d77f25f7734d5.svg",
+            "/media/031bfa290d75a19106452960.svg"
           ]
         },
         {
@@ -28,7 +28,7 @@
           "name": "Mai",
           "account": "mai",
           "photos": [
-            "/demo/flowers.svg"
+            "/media/651aaf5c063fcb842da8746c.svg"
           ]
         },
         {
@@ -36,6 +36,14 @@
           "name": "An",
           "account": "an",
           "photos": []
+        },
+        {
+          "id": "a86a7a9c-6994-49cd-a08f-dcf8b85145a3",
+          "name": "Việt Anh",
+          "account": "vanh",
+          "photos": [
+            "/media/80e3e3c44f67d1b51a94307f.webp"
+          ]
         }
       ],
       "wishes": [
@@ -84,5 +92,5 @@
       ]
     }
   ],
-  "isDemo": true
+  "isDemo": false
 }
