@@ -210,15 +210,6 @@ export function App({
               Về admin
             </button>
           )}
-          {scene !== "login" && (
-            <button
-              className="icon-button"
-              onClick={toggleMusic}
-              aria-label={music ? "Tắt nhạc" : "Bật nhạc"}
-            >
-              {music ? <Volume2 size={19} /> : <VolumeX size={19} />}
-            </button>
-          )}
         </div>
       </header>
       {scene === "login" && (
