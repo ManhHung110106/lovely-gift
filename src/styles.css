@@ -656,6 +656,7 @@ img {
   margin: auto;
 }
 .intro-letter p {
+  white-space: pre-wrap;
   font-family: var(--display);
   font-size: 27px;
   line-height: 1.45;
