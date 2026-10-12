@@ -308,7 +308,7 @@ export function App({
           }} aria-label={videoUrl && !(snapshot && !navigator.onLine) ? "Xem video dành cho bạn" : "Mở sổ lời chúc"}>
             <Heart size={26} />
             <p>{event.intro}</p>
-            <span className="handwritten">Thương bạn, thật nhiều.</span>
+            <span className="handwritten">Thương yêu bạn thật nhiều!</span>
           </button>
         </section>
       )}
