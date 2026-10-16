@@ -71,13 +71,14 @@ export function Flower({
 export function Petals() {
   return (
     <div className="petals" aria-hidden="true">
-      {Array.from({ length: 13 }, (_, i) => (
+      {Array.from({ length: 28 }, (_, i) => (
         <i
           key={i}
           style={{
-            left: `${i * 8}%`,
-            animationDelay: `${-i * 2.3}s`,
-            animationDuration: `${17 + (i % 5) * 3}s`,
+            left: `${(i * 3.6 + (i % 3) * 1.2) % 98}%`,
+            animationDelay: `${-(i * 1.25)}s`,
+            animationDuration: `${11 + (i % 6) * 2.3}s`,
+            transform: `scale(${0.75 + (i % 4) * 0.2})`,
           }}
         />
       ))}

@@ -4,7 +4,7 @@ import { useEffect, useMemo, useRef, useState } from "react";
 import * as THREE from "three";
 import type { GiftEvent, Recipient } from "./types";
 import { wishesFor } from "./model";
-import { HeartDust, Fireworks, Starfield, Meteors } from "./Sparkles3D";
+import { HeartDust, Fireworks, Starfield, Meteors, FallingPetals3D } from "./Sparkles3D";
 function Photo({
   src,
   index,
@@ -161,15 +161,18 @@ export function Garden({
       gl={{ antialias: true }}
       aria-label="Không gian kỷ niệm 3D"
     >
-      <color attach="background" args={["#160f23"]} />
-      <fog attach="fog" args={["#160f23", 18, 35]} />
-      <ambientLight intensity={1.8} />
-      <pointLight position={[0, 5, 4]} intensity={15} color="#ffb5c8" />
+      <color attach="background" args={["#12091e"]} />
+      <fog attach="fog" args={["#12091e", 18, 38]} />
+      <ambientLight intensity={1.9} />
+      <pointLight position={[0, 4, 3]} intensity={25} color="#ff85a1" distance={22} />
+      <pointLight position={[-6, -1, -3]} intensity={18} color="#ffd166" distance={22} />
+      <pointLight position={[6, 2, -4]} intensity={18} color="#c77dff" distance={22} />
       <CameraFit />
       <HeartDust />
       <Fireworks />
       <Starfield />
       <Meteors />
+      <FallingPetals3D />
       {recipient.photos.map((p, i) => (
         <Photo
           key={`${p}-${i}`}

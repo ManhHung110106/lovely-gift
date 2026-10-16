@@ -467,12 +467,14 @@ img {
 .petals i {
   position: absolute;
   top: -40px;
-  width: 7px;
-  height: 13px;
-  border-radius: 80% 10% 80% 10%;
-  background: #e9a6b5;
+  width: 9px;
+  height: 15px;
+  border-radius: 80% 15% 80% 15%;
+  background: radial-gradient(circle at 35% 25%, #ffe0e9, #f78da7 60%, #e0407b);
+  box-shadow: 0 0 6px rgba(255, 175, 190, 0.5);
   opacity: 0;
   animation: petal-fall linear infinite;
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.12));
 }
 .scene-enter {
   animation: scene-in 0.8s ease both;
@@ -973,7 +975,41 @@ img {
   min-height: 100svh;
 }
 .scene-garden .petals {
-  display: none;
+  display: block;
+  z-index: 2;
+  pointer-events: none;
+  opacity: 0.9;
+}
+.garden-flower-corner {
+  position: absolute;
+  z-index: 2;
+  pointer-events: none;
+  width: 210px;
+  opacity: 0.82;
+  filter: drop-shadow(0 0 20px rgba(255, 105, 180, 0.4));
+  transition: opacity 0.5s ease;
+}
+.garden-flower-corner.left {
+  left: -20px;
+  bottom: -15px;
+  transform: rotate(-15deg);
+}
+.garden-flower-corner.right {
+  right: -25px;
+  top: 40px;
+  transform: rotate(165deg) scaleX(-1);
+}
+@media (max-width: 760px) {
+  .garden-flower-corner {
+    width: 130px;
+    opacity: 0.65;
+  }
+  .garden-flower-corner.left {
+    bottom: 60px;
+  }
+  .garden-flower-corner.right {
+    top: 60px;
+  }
 }
 .scene-garden .site-header {
   border: 0;
@@ -988,15 +1024,21 @@ img {
   z-index: 2;
   margin: 20px 0 0 6%;
   pointer-events: none;
-  width: 330px;
+  width: 350px;
 }
 .garden-heading h1 {
-  font-size: 44px;
-  line-height: 1.1;
+  font-size: clamp(38px, 4.2vw, 50px);
+  line-height: 1.15;
   margin: 15px 0;
+  color: #fff2f6;
+  text-shadow: 0 0 25px rgba(255, 107, 149, 0.5), 0 0 50px rgba(255, 182, 193, 0.3);
 }
 .garden-heading em {
-  color: #e6afc2;
+  color: #ff9ebb;
+  background: linear-gradient(135deg, #ffd166, #ff75a0, #ffb3c6);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  filter: drop-shadow(0 0 14px rgba(255, 117, 160, 0.6));
 }
 .garden-heading p {
   font-size: 9px;
@@ -1891,17 +1933,17 @@ img {
 }
 @keyframes petal-fall {
   0% {
-    transform: translate(0, -40px) rotate(0);
+    transform: translate(0, -40px) rotate(0deg) scale(0.8);
     opacity: 0;
   }
-  10% {
-    opacity: 0.25;
+  15% {
+    opacity: 0.85;
   }
-  90% {
-    opacity: 0.2;
+  85% {
+    opacity: 0.75;
   }
   100% {
-    transform: translate(100px, 100svh) rotate(450deg);
+    transform: translate(120px, 105svh) rotate(600deg) scale(1.05);
     opacity: 0;
   }
 }
