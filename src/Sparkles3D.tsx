@@ -188,7 +188,8 @@ export function Fireworks() {
     const t = clock.elapsedTime;
     for (let i = 0; i < 7680; i++) {
       const g = Math.floor(i / 480);
-      const age = ((t + g * 0.42) % 4.8) / 4.8;
+      // Tốc độ nổ chậm hơn ~0.8x (chu kỳ 6.0s thay vì 4.8s)
+      const age = ((t + g * 0.525) % 6.0) / 6.0;
       const spread = Math.pow(age, 0.52) * 3.2;
       const c = centers[g];
       const i3 = i * 3;
@@ -197,9 +198,9 @@ export function Fireworks() {
         c[1] + data.directions[i3 + 1] * spread - age * age * 1.5;
       data.position[i3 + 2] = c[2] + data.directions[i3 + 2] * spread;
       // Nhấp nháy lấp lánh (sparkling glitter) khi tàn pháo rơi
-      const shimmer = 0.8 + 0.2 * Math.sin(t * 18.0 + i);
+      const shimmer = 0.8 + 0.2 * Math.sin(t * 15.0 + i);
       data.opacity[i] =
-        Math.sin(Math.min(age * 7, 1) * Math.PI * 0.5) *
+        Math.sin(Math.min(age * 5.6, 1) * Math.PI * 0.5) *
         Math.pow(1 - age, 1.4) *
         shimmer;
     }
@@ -264,20 +265,20 @@ export function Meteors() {
     for (let i = 0; i < total; i++) {
       const group = Math.floor(i / 70);
       const tail = (i % 70) / 70;
-      // Chu kỳ ngắn 5.2s, so le 0.65s -> luôn có 2-3 sao băng bay cùng lúc
-      const age = ((t + group * 0.65) % 5.2) / 5.2;
+      // Tốc độ sao băng chậm hơn ~0.8x (chu kỳ 6.5s, vận tốc di chuyển *0.8)
+      const age = ((t + group * 0.81) % 6.5) / 6.5;
       const progress = age * 2.8;
       // Điểm xuất phát và hướng bay đa dạng theo góc nghiêng duyên dáng
       const startX = 14 - (group % 4) * 3;
       const startY = 10 - Math.floor(group / 4) * 2;
-      const speedX = 26;
-      const speedY = 13 + (group % 3) * 2;
+      const speedX = 20.8;
+      const speedY = 10.4 + (group % 3) * 1.6;
       const i3 = i * 3;
-      data.position[i3] = startX - progress * speedX + tail * 3.2;
-      data.position[i3 + 1] = startY - progress * speedY + tail * 1.6;
+      data.position[i3] = startX - progress * speedX + tail * 2.8;
+      data.position[i3 + 1] = startY - progress * speedY + tail * 1.4;
       data.position[i3 + 2] = -7 - (group % 5) * 1.6;
       data.opacity[i] =
-        (progress < 1.45 ? 1 : 0) * Math.pow(1 - tail, 1.8);
+        (progress < 1.75 ? 1 : 0) * Math.pow(1 - tail, 1.8);
     }
     ref.current.geometry.attributes.position.needsUpdate = true;
     ref.current.geometry.attributes.aOpacity.needsUpdate = true;

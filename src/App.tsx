@@ -472,8 +472,6 @@ export function App({
           <div className="garden-canvas">
             <Garden event={event} recipient={person} />
           </div>
-          <Flower className="garden-flower-corner left" variant={1} />
-          <Flower className="garden-flower-corner right" variant={2} />
           <div className="garden-heading scene-enter">
             <h1>
               Thế giới đẹp hơn,

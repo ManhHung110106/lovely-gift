@@ -980,37 +980,6 @@ img {
   pointer-events: none;
   opacity: 0.9;
 }
-.garden-flower-corner {
-  position: absolute;
-  z-index: 2;
-  pointer-events: none;
-  width: 210px;
-  opacity: 0.82;
-  filter: drop-shadow(0 0 20px rgba(255, 105, 180, 0.4));
-  transition: opacity 0.5s ease;
-}
-.garden-flower-corner.left {
-  left: -20px;
-  bottom: -15px;
-  transform: rotate(-15deg);
-}
-.garden-flower-corner.right {
-  right: -25px;
-  top: 40px;
-  transform: rotate(165deg) scaleX(-1);
-}
-@media (max-width: 760px) {
-  .garden-flower-corner {
-    width: 130px;
-    opacity: 0.65;
-  }
-  .garden-flower-corner.left {
-    bottom: 60px;
-  }
-  .garden-flower-corner.right {
-    top: 60px;
-  }
-}
 .scene-garden .site-header {
   border: 0;
   pointer-events: none;
