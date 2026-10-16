@@ -8,88 +8,253 @@
       "occasion": "Ngày Phụ nữ Việt Nam",
       "date": "2026-10-20",
       "intro": "Có những điều thật đẹp, chỉ vì có bạn ở đây. Hôm nay, tụi mình gửi bạn một chút thương — và rất nhiều lời chúc từ trái tim.",
-      "videoUrl": "",
-      "musicUrl": "",
+      "videoUrl": "https://youtu.be/Q2eHne6x0-E?si=ny_pb1i0-ANkZ3tM",
+      "musicUrl": "/media/3379067e2dcb40220f4fcbf6.mp3",
       "theme": "rose",
       "recipients": [
         {
-          "id": "linh",
-          "name": "Linh",
-          "account": "linh",
-          "photos": [
-            "/media/e84ad58ff48483e80ab085bb.svg",
-            "/media/651aaf5c063fcb842da8746c.svg",
-            "/media/57ca6b086c7d77f25f7734d5.svg",
-            "/media/031bfa290d75a19106452960.svg"
-          ]
+          "id": "fcd4ec65-9993-4ef9-9516-396a78c1f930",
+          "name": "Các bạn nữ của SoDiTEC",
+          "account": "SoDiTEC-Women",
+          "photos": [],
+          "videoUrl": "https://youtu.be/BB49x_uMlGA?si=NxBMwsQaVw3049hc"
         },
         {
-          "id": "mai",
-          "name": "Mai",
-          "account": "mai",
-          "photos": [
-            "/media/651aaf5c063fcb842da8746c.svg"
-          ]
-        },
-        {
-          "id": "an",
-          "name": "An",
-          "account": "an",
+          "id": "ha-dan-72418",
+          "name": "Trần Hà Đan",
+          "account": "Trần Hà Đan 72418",
           "photos": []
         },
         {
-          "id": "a86a7a9c-6994-49cd-a08f-dcf8b85145a3",
-          "name": "Việt Anh",
-          "account": "vanh",
-          "photos": [
-            "/media/80e3e3c44f67d1b51a94307f.webp"
-          ]
+          "id": "tam-thu-53902",
+          "name": "Nguyễn Thị Tâm Thư",
+          "account": "Nguyễn Thị Tâm Thư 53902",
+          "photos": []
+        },
+        {
+          "id": "minh-ngoc-81635",
+          "name": "Phạm Minh Ngọc",
+          "account": "Phạm Minh Ngọc 81635",
+          "photos": []
+        },
+        {
+          "id": "minh-chau-29471",
+          "name": "Phạm Minh Châu",
+          "account": "Phạm Minh Châu 29471",
+          "photos": []
+        },
+        {
+          "id": "bao-chau-64819",
+          "name": "Phùng Dương Bảo Châu",
+          "account": "Phùng Dương Bảo Châu 64819",
+          "photos": []
+        },
+        {
+          "id": "thuy-mai-38152",
+          "name": "Phan Thị Thúy Mai",
+          "account": "Phan Thị Thúy Mai 38152",
+          "photos": []
+        },
+        {
+          "id": "thanh-thao-91740",
+          "name": "Đồng Nguyên Thanh Thảo",
+          "account": "Đồng Nguyên Thanh Thảo 91740",
+          "photos": []
+        },
+        {
+          "id": "anh-phuong-45283",
+          "name": "Huỳnh Nguyễn Anh Phương",
+          "account": "Huỳnh Nguyễn Anh Phương 45283",
+          "photos": []
+        },
+        {
+          "id": "ngoc-anh-17395",
+          "name": "Trần Ngọc Ánh",
+          "account": "Trần Ngọc Ánh 17395",
+          "photos": []
+        },
+        {
+          "id": "bao-trang-82641",
+          "name": "Nguyễn Thị Bảo Trang",
+          "account": "Nguyễn Thị Bảo Trang 82641",
+          "photos": []
+        },
+        {
+          "id": "khanh-linh-50927",
+          "name": "Bùi Khánh Linh",
+          "account": "Bùi Khánh Linh 50927",
+          "photos": []
+        },
+        {
+          "id": "doan-trang-36481",
+          "name": "Nguyễn Đoan Trang",
+          "account": "Nguyễn Đoan Trang 36481",
+          "photos": []
+        },
+        {
+          "id": "bao-uyen-79153",
+          "name": "Nguyễn Lâm Bảo Uyên",
+          "account": "Nguyễn Lâm Bảo Uyên 79153",
+          "photos": []
+        },
+        {
+          "id": "thu-uyen-24860",
+          "name": "Hà Nguyễn Thu Uyên",
+          "account": "Hà Nguyễn Thu Uyên 24860",
+          "photos": []
+        },
+        {
+          "id": "minh-vy-61539",
+          "name": "Nguyễn Minh Vy",
+          "account": "Nguyễn Minh Vy 61539",
+          "photos": []
+        },
+        {
+          "id": "thu-huyen-93724",
+          "name": "Nguyễn Thu Huyền",
+          "account": "Nguyễn Thu Huyền 93724",
+          "photos": []
+        },
+        {
+          "id": "ha-chi-48216",
+          "name": "Đỗ Hà Chi",
+          "account": "Đỗ Hà Chi 48216",
+          "photos": []
+        },
+        {
+          "id": "bich-ngoc-15938",
+          "name": "Lê Thị Bích Ngọc",
+          "account": "Lê Thị Bích Ngọc 15938",
+          "photos": []
+        },
+        {
+          "id": "xuan-huong-70482",
+          "name": "Nguyễn Xuân Hương",
+          "account": "Nguyễn Xuân Hương 70482",
+          "photos": []
+        },
+        {
+          "id": "minh-anh-32619",
+          "name": "Tô Minh Ánh",
+          "account": "Tô Minh Ánh 32619",
+          "photos": []
+        },
+        {
+          "id": "hanh-nhi-85941",
+          "name": "Đỗ Hạnh Nhi",
+          "account": "Đỗ Hạnh Nhi 85941",
+          "photos": []
+        },
+        {
+          "id": "yen-nhi-63175",
+          "name": "Lê Yến Nhi",
+          "account": "Lê Yến Nhi 63175",
+          "photos": []
+        },
+        {
+          "id": "mai-hoa-29508",
+          "name": "Lê Mai Hoa",
+          "account": "Lê Mai Hoa 29508",
+          "photos": []
+        },
+        {
+          "id": "huyen-trang-41836",
+          "name": "Trần Huyền Trang",
+          "account": "Trần Huyền Trang 41836",
+          "photos": []
+        },
+        {
+          "id": "thuy-linh-76294",
+          "name": "Nguyễn Thuỳ Linh",
+          "account": "Nguyễn Thuỳ Linh 76294",
+          "photos": []
+        },
+        {
+          "id": "ngoc-anh-18450",
+          "name": "Tạ Ngọc Anh",
+          "account": "Tạ Ngọc Anh 18450",
+          "photos": []
+        },
+        {
+          "id": "my-duyen-52739",
+          "name": "Trần Thị Mỹ Duyên",
+          "account": "Trần Thị Mỹ Duyên 52739",
+          "photos": []
+        },
+        {
+          "id": "thuy-dung-89361",
+          "name": "Lê Thị Thùy Dung",
+          "account": "Lê Thị Thùy Dung 89361",
+          "photos": []
+        },
+        {
+          "id": "thuy-nga-34185",
+          "name": "Phạm Thùy Nga",
+          "account": "Phạm Thùy Nga 34185",
+          "photos": []
+        },
+        {
+          "id": "ngoc-mai-67249",
+          "name": "Trần Ngọc Mai",
+          "account": "Trần Ngọc Mai 67249",
+          "photos": []
+        },
+        {
+          "id": "phuong-anh-20583",
+          "name": "Nguyễn Phương Anh",
+          "account": "Nguyễn Phương Anh 20583",
+          "photos": []
+        },
+        {
+          "id": "hong-hanh-94817",
+          "name": "Vũ Thị Hồng Hạnh",
+          "account": "Vũ Thị Hồng Hạnh 94817",
+          "photos": []
+        },
+        {
+          "id": "mai-linh-51628",
+          "name": "Đỗ Nguyễn Mai Linh",
+          "account": "Đỗ Nguyễn Mai Linh 51628",
+          "photos": []
+        },
+        {
+          "id": "my-linh-110111",
+          "name": "Lằm Mỹ Linh",
+          "account": "Lằm Mỹ Linh 110111",
+          "photos": []
+        },
+        {
+          "id": "bich-phuong-99999",
+          "name": "Phạm Bích Phương",
+          "account": "Phạm Bích Phương 99999",
+          "photos": []
+        },
+        {
+          "id": "hanh-nguyen-86868",
+          "name": "Lê Hạnh Nguyên",
+          "account": "Lê Hạnh Nguyên 86868",
+          "photos": []
+        },
+        {
+          "id": "my-duyen-02347",
+          "name": "Nguyễn Mỹ Duyên",
+          "account": "Nguyễn Mỹ Duyên 02347",
+          "photos": []
+        },
+        {
+          "id": "bao-thu-09202",
+          "name": "Hồ Bảo Thư",
+          "account": "Hồ Bảo Thư 09202",
+          "photos": []
+        },
+        {
+          "id": "linh-duyen-92345",
+          "name": "Trương Linh Duyên",
+          "account": "Trương Linh Duyên 92345",
+          "photos": []
         }
       ],
-      "wishes": [
-        {
-          "id": "w1",
-          "recipientId": "linh",
-          "sender": "Minh",
-          "order": 1,
-          "message": "Chúc Linh một ngày 20/10 thật dịu dàng. Mong bạn luôn có những lý do nhỏ xíu để mỉm cười, những người thật lòng để ở cạnh, và đủ can đảm để làm điều mình yêu. Bạn xứng đáng với tất cả những điều đẹp đẽ ấy. 🌷"
-        },
-        {
-          "id": "w2",
-          "recipientId": "linh",
-          "sender": "Nhóm bạn thân",
-          "order": 2,
-          "message": "Cảm ơn bạn vì những lần lắng nghe, những cuộc hẹn chẳng cần lý do và những tiếng cười làm ngày bình thường trở nên đáng nhớ. Có bạn trong nhóm là một điều rất may mắn. Cứ là bạn nhé, tụi mình luôn ở đây. 💛"
-        },
-        {
-          "id": "w3",
-          "recipientId": "linh",
-          "sender": "",
-          "order": 3,
-          "message": "Mong những ngày tới, bạn được yêu thương thật nhiều. Mong mỗi giấc mơ bạn ấp ủ sẽ lớn lên cùng niềm vui, và mỗi buổi sáng đều bắt đầu bằng một chút bình yên. Happy 20/10! ✨"
-        },
-        {
-          "id": "w4",
-          "recipientId": "linh",
-          "sender": "Hà",
-          "order": 4,
-          "message": "Chúc cô gái luôn rực rỡ theo cách của riêng mình. Không cần trở thành ai khác, vì bạn đã rất tuyệt vời rồi. Hẹn bạn một buổi cà phê và kể nhau nghe đủ thứ trên đời nhé! ☕"
-        },
-        {
-          "id": "w5",
-          "recipientId": "mai",
-          "sender": "Những người bạn",
-          "order": 1,
-          "message": "Chúc Mai luôn vui vẻ, bình an và tự tin theo đuổi điều mình yêu. Gửi bạn một bó hoa và thật nhiều thương mến! 🌸"
-        },
-        {
-          "id": "w6",
-          "recipientId": "an",
-          "sender": "Tụi mình",
-          "order": 1,
-          "message": "Chúc An một ngày thật đẹp. Mong những điều tốt lành sẽ luôn tìm đến bạn. 💕"
-        }
-      ]
+      "wishes": []
     }
   ],
   "isDemo": false

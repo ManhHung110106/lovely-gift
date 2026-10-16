@@ -10,6 +10,16 @@ export const wishesFor = (event: GiftEvent, id: string) =>
     .filter((w) => w.recipientId === id)
     .sort((a, b) => a.order - b.order);
 export const uid = () => crypto.randomUUID();
+export function videosFor(event: GiftEvent, recipient: Recipient) {
+  const mode = recipient.videoMode || "both";
+  // Without a personal video, every recipient uses the event's common video.
+  if (!recipient.videoUrl)
+    return event.videoUrl ? [{ url: event.videoUrl, kind: "common" as const }] : [];
+  return [
+    ...(mode !== "private" && event.videoUrl ? [{ url: event.videoUrl, kind: "common" as const }] : []),
+    ...(mode !== "common" ? [{ url: recipient.videoUrl, kind: "private" as const }] : []),
+  ];
+}
 export function validateStore(input: unknown): string[] {
   const errors: string[] = [];
   const store = input as GiftStore;
@@ -79,6 +89,8 @@ export function validateStore(input: unknown): string[] {
       )
         errors.push("Người nhận hoặc ảnh không hợp lệ.");
       people.add(r.id);
+      if (r.videoMode !== undefined && !["common", "private", "both"].includes(r.videoMode))
+        errors.push("Lựa chọn video của người nhận không hợp lệ.");
       if (r.videoUrl !== undefined && (typeof r.videoUrl !== "string" || (r.videoUrl && !videoId(r.videoUrl))))
         errors.push("Video riêng của người nhận phải là đường dẫn YouTube hợp lệ.");
     }

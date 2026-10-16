@@ -6,8 +6,32 @@ import {
   parseWishes,
   validateStore,
   wordCount,
+  videosFor,
 } from "./model";
 import { demo } from "./data";
+describe("Recipient video sequence", () => {
+  const event = { ...demo.events[0], videoUrl: "https://youtu.be/commonvideo" };
+  const recipient = { ...event.recipients[0], videoUrl: "https://youtu.be/privatevid1" };
+  it("defaults to common then private for existing recipients", () => {
+    expect(videosFor(event, recipient).map(v => v.url)).toEqual([event.videoUrl, recipient.videoUrl]);
+  });
+  it("honors each recipient's common-only and private-only settings", () => {
+    expect(videosFor(event, { ...recipient, videoMode: "common" }).map(v => v.kind)).toEqual(["common"]);
+    expect(videosFor(event, { ...recipient, videoMode: "private" }).map(v => v.kind)).toEqual(["private"]);
+    expect(videosFor(event, { ...recipient, videoMode: "both" }).map(v => v.kind)).toEqual(["common", "private"]);
+  });
+  it("handles missing videos without introducing empty playback steps", () => {
+    expect(videosFor(event, { ...recipient, videoUrl: "", videoMode: "private" }).map(v => v.kind)).toEqual(["common"]);
+    expect(videosFor({ ...event, videoUrl: "" }, recipient).map(v => v.kind)).toEqual(["private"]);
+    expect(videosFor({ ...event, videoUrl: "" }, { ...recipient, videoMode: "common" })).toEqual([]);
+    expect(videosFor({ ...event, videoUrl: "" }, { ...recipient, videoUrl: "" })).toEqual([]);
+  });
+  it("rejects unknown playback settings in imported data", () => {
+    const store = structuredClone(demo);
+    Object.assign(store.events[0].recipients[0], { videoMode: "invalid" });
+    expect(validateStore(store)).toContain("Lựa chọn video của người nhận không hợp lệ.");
+  });
+});
 describe("Recipient mapping and import", () => {
   it("accepts legacy recipients and validates each personal YouTube URL", () => {
     const store = structuredClone(demo);

@@ -283,6 +283,7 @@ export function Admin({
       account: r.account?.trim() || r["Tên truy cập"]?.trim() || "",
       photos: [],
       ...(r.video_url !== undefined ? { videoUrl: r.video_url.trim() } : {}),
+      ...(r.video_mode?.trim() ? { videoMode: r.video_mode.trim() as Recipient["videoMode"] } : {}),
     }));
     if (parsedPeople.errors.length) {
       setNotice("Tệp CSV có lỗi cấu trúc. Kiểm tra số cột.");
@@ -916,7 +917,7 @@ export function Admin({
                   download(
                     importType === "wishes"
                       ? '\uFEFFwish_id,recipient_id,sender_name,message,order\nloi-chuc-01,linh,Minh,"Chúc bạn một ngày thật đẹp 🌷",1'
-                      : "\uFEFFrecipient_id,name,account,video_url\nlinh,Linh,linh,",
+                      : "\uFEFFrecipient_id,name,account,video_url,video_mode\nlinh,Linh,linh,,both",
                     "mau-" + importType + ".csv",
                     "text/csv;charset=utf-8",
                   )
@@ -1147,9 +1148,19 @@ export function Admin({
               Video YouTube riêng
               <input value={person.videoUrl || ""} placeholder="https://www.youtube.com/watch?v=…"
                 onChange={e => setPerson({ ...person, videoUrl: e.target.value.trim() })} />
-              <small>Để trống để dùng video chung của sự kiện. Thiệp sẽ ưu tiên video riêng của người này.</small>
+              <small>Để trống để dùng video chung của sự kiện. Nếu có video riêng, bạn có thể chọn cách xem bên dưới.</small>
               {person.videoUrl && !videoId(person.videoUrl) && <small className="field-error">Đường dẫn YouTube chưa hợp lệ.</small>}
             </label>
+            {person.videoUrl && <label>
+              Cách xem video
+              <select value={person.videoMode || "both"}
+                onChange={e => setPerson({ ...person, videoMode: e.target.value as Recipient["videoMode"] })}>
+                <option value="common">Chỉ xem video chung</option>
+                <option value="private">Chỉ xem video riêng</option>
+                <option value="both">Xem cả hai — video chung trước, video riêng sau</option>
+              </select>
+              <small>Video riêng là lời chúc dành riêng cho người nhận này.</small>
+            </label>}
             <div className="photo-grid">
               {person.photos.map((p, i) => (
                 <div key={i}>

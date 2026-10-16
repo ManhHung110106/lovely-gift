@@ -4,6 +4,7 @@ export interface Recipient {
   account: string;
   photos: string[];
   videoUrl?: string;
+  videoMode?: "common" | "private" | "both";
 }
 export interface Wish {
   id: string;

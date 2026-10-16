@@ -15,7 +15,7 @@ import {
   X,
 } from "lucide-react";
 import type { GiftEvent, GiftStore, Recipient } from "./types";
-import { normalize, wishesFor, bookPages } from "./model";
+import { normalize, wishesFor, bookPages, videosFor } from "./model";
 import { Flower, Petals, Balloons } from "./Botanicals";
 import { Garden } from "./Garden";
 import { GiftAudio } from "./music";
@@ -51,7 +51,9 @@ export function App({
     snapshot?.recipient || null,
   );
   const person = preview?.recipient || recipient;
-  const videoUrl = person?.videoUrl || event?.videoUrl || "";
+  const videos = event && person ? videosFor(event, person) : [];
+  const [videoIndex, setVideoIndex] = useState(0);
+  const videoUrl = videos[videoIndex]?.url || "";
   const [scene, setScene] = useState<Scene>(snapshot ? "envelope" : "login");
   const [account, setAccount] = useState("");
   const [error, setError] = useState("");
@@ -227,7 +229,7 @@ export function App({
                 <input
                   id="account"
                   autoComplete="username"
-                  placeholder="Họ và tên + Ngày sinh"
+                  placeholder="Tên đăng nhập của bạn"
                   value={account}
                   onChange={(e) => {
                     setAccount(e.target.value);
@@ -303,9 +305,9 @@ export function App({
             Hôm nay, <em>bạn là điều đặc biệt.</em>
           </h1>
           <button className="intro-letter intro-letter-button" onClick={() => {
-            if (videoUrl && !(snapshot && !navigator.onLine)) { setVideoEnded(false); setScene("video"); }
+            if (videos.length && !(snapshot && !navigator.onLine)) { setVideoIndex(0); setVideoEnded(false); setScene("video"); }
             else setScene("book");
-          }} aria-label={videoUrl && !(snapshot && !navigator.onLine) ? "Xem video dành cho bạn" : "Mở sổ lời chúc"}>
+          }} aria-label={videos.length && !(snapshot && !navigator.onLine) ? "Xem video dành cho bạn" : "Mở sổ lời chúc"}>
             <Heart size={26} />
             <p>{event.intro}</p>
             <span className="handwritten">Thương yêu bạn thật nhiều!</span>
@@ -314,7 +316,10 @@ export function App({
       )}
       {scene === "video" && person && (
         <section className="intro-scene scene-enter">
+            <h1>{videos[videoIndex]?.kind === "private" ? <>Một lời chúc <em>dành riêng cho bạn.</em></> : <>Một chút yêu thương <em>gửi đến mọi người.</em></>}</h1>
+            {videos.length > 1 && <p className="subtle">Video {videoIndex + 1} / {videos.length}</p>}
             <YouTube
+              key={videoIndex}
               url={videoUrl}
               onEnded={() => setVideoEnded(true)}
               onPlaying={(playing) => {
@@ -329,8 +334,13 @@ export function App({
               Video YouTube cần kết nối Internet.
             </p>
           )}
-          {videoEnded && <button className="primary-button" onClick={() => setScene("book")}>
-            Mở sổ lời chúc <ArrowRight size={16} />
+          {videoEnded && <button className="primary-button" onClick={() => {
+            if (videoIndex + 1 < videos.length) {
+              setVideoEnded(false);
+              setVideoIndex(videoIndex + 1);
+            } else setScene("book");
+          }}>
+            {videoIndex + 1 < videos.length ? "Xem lời chúc riêng dành cho bạn" : "Mở sổ lời chúc"} <ArrowRight size={16} />
           </button>}
         </section>
       )}
