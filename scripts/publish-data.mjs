@@ -40,13 +40,23 @@ async function extract(url) {
     "audio/mp4": "m4a",
     "audio/x-m4a": "m4a",
     "audio/webm": "webm",
+    "video/mp4": "mp4",
+    "video/webm": "webm",
+    "video/ogg": "ogv",
+    "video/quicktime": "mov",
+    "video/x-m4v": "m4v",
+    "video/x-matroska": "mkv",
   };
   const ext = extensions[match[1]];
-  if (!ext) throw new Error("Định dạng ảnh/nhạc chưa được hỗ trợ: " + match[1]);
+  if (!ext) throw new Error("Định dạng ảnh/nhạc/video chưa được hỗ trợ: " + match[1]);
   const bytes = Buffer.from(match[2], "base64");
-  if (bytes.length > 90 * 1024 * 1024)
+  const isVideo = match[1].startsWith("video/");
+  const maxBytes = isVideo ? 1024 * 1024 * 1024 : 90 * 1024 * 1024;
+  if (bytes.length > maxBytes)
     throw new Error(
-      "Một tài nguyên vượt 90 MB. Hãy chọn tệp nhỏ hơn để lưu trên GitHub.",
+      isVideo
+        ? "Một video vượt 1 GB. Hãy chọn tệp nhỏ hơn."
+        : "Một tài nguyên vượt 90 MB. Hãy chọn tệp nhỏ hơn để lưu trên GitHub.",
     );
   const name =
     createHash("sha256").update(bytes).digest("hex").slice(0, 24) + "." + ext;
@@ -54,9 +64,12 @@ async function extract(url) {
   return "/media/" + name;
 }
 for (const event of data.events) {
-  for (const person of event.recipients)
+  for (const person of event.recipients) {
     person.photos = await Promise.all(person.photos.map(extract));
+    if (person.videoUrl) person.videoUrl = await extract(person.videoUrl);
+  }
   if (event.musicUrl) event.musicUrl = await extract(event.musicUrl);
+  if (event.videoUrl) event.videoUrl = await extract(event.videoUrl);
 }
 await mkdir(join(outputRoot, "content"), { recursive: true });
 await writeFile(

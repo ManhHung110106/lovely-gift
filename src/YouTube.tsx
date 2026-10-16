@@ -1,7 +1,8 @@
 import { useEffect, useRef, useState } from "react";
-import { Play } from "lucide-react";
-import { videoId } from "./media";
-export { videoId } from "./media";
+import { Play, Folder, UploadCloud } from "lucide-react";
+import { videoId, isVideoFile } from "./media";
+export { videoId, isVideoFile } from "./media";
+
 export function YouTube({
   url,
   onPlaying,
@@ -12,12 +13,34 @@ export function YouTube({
   onEnded?: () => void;
 }) {
   const holder = useRef<HTMLDivElement>(null);
+  const videoRef = useRef<HTMLVideoElement>(null);
   const callback = useRef(onPlaying);
   callback.current = onPlaying;
   const ended = useRef(onEnded);
   ended.current = onEnded;
   const [blocked, setBlocked] = useState(false);
+  const [localSrc, setLocalSrc] = useState<string | null>(null);
+  const isYt = Boolean(videoId(url));
+
   useEffect(() => {
+    setLocalSrc(null);
+    setBlocked(false);
+  }, [url]);
+
+  useEffect(() => {
+    return () => {
+      if (localSrc && localSrc.startsWith("blob:")) {
+        URL.revokeObjectURL(localSrc);
+      }
+    };
+  }, [localSrc]);
+
+  useEffect(() => {
+    if (!isYt) {
+      return () => {
+        callback.current(false);
+      };
+    }
     let player: any;
     let cancelled = false;
     const id = videoId(url);
@@ -58,7 +81,78 @@ export function YouTube({
       player?.destroy();
       callback.current(false);
     };
-  }, [url]);
+  }, [url, isYt]);
+
+  if (!isYt) {
+    const activeSrc = localSrc || url;
+
+    const handleFileSelect = (file: File) => {
+      if (
+        file &&
+        (file.type.startsWith("video/") ||
+          /\.(mp4|webm|ogg|mov|mkv)$/i.test(file.name))
+      ) {
+        if (localSrc && localSrc.startsWith("blob:")) {
+          URL.revokeObjectURL(localSrc);
+        }
+        const blobUrl = URL.createObjectURL(file);
+        setLocalSrc(blobUrl);
+        setBlocked(false);
+      }
+    };
+
+    return (
+      <div
+        className="video-frame"
+        onDragOver={(e) => e.preventDefault()}
+        onDrop={(e) => {
+          e.preventDefault();
+          const file = e.dataTransfer.files?.[0];
+          if (file) handleFileSelect(file);
+        }}
+      >
+        <video
+          ref={videoRef}
+          key={activeSrc}
+          src={activeSrc}
+          controls
+          playsInline
+          autoPlay
+          onPlay={() => callback.current(true)}
+          onPause={() => callback.current(false)}
+          onEnded={() => {
+            callback.current(false);
+            ended.current?.();
+          }}
+          onError={() => setBlocked(true)}
+        />
+        {blocked && (
+          <div className="video-fallback-overlay">
+            <p className="fallback-title">
+              <Folder size={18} /> Video kỷ niệm kèm theo thiệp
+            </p>
+            <p className="fallback-desc">
+              Nếu video chưa phát tự động do bảo mật tệp cục bộ của trình duyệt, bạn hãy chọn tệp video đã tải về máy để xem ngay:
+            </p>
+            <label className="fallback-pick-button">
+              <UploadCloud size={16} /> Chọn tệp video trên máy
+              <input
+                type="file"
+                accept="video/*"
+                style={{ display: "none" }}
+                onChange={(e) => {
+                  const file = e.target.files?.[0];
+                  if (file) handleFileSelect(file);
+                }}
+              />
+            </label>
+            <span className="fallback-drag-hint">Hoặc kéo thả tệp video vào đây</span>
+          </div>
+        )}
+      </div>
+    );
+  }
+
   return (
     <div className="video-frame">
       <div ref={holder} />

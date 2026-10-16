@@ -19,7 +19,7 @@ import { normalize, wishesFor, bookPages, videosFor } from "./model";
 import { Flower, Petals, Balloons } from "./Botanicals";
 import { Garden } from "./Garden";
 import { GiftAudio } from "./music";
-import { YouTube } from "./YouTube";
+import { YouTube, videoId } from "./YouTube";
 import { exportGift } from "./export";
 import { Admin } from "./Admin";
 import { AdminLogin } from "./AdminLogin";
@@ -138,10 +138,16 @@ export function App({
     if (!event || !person) return;
     setBusy(true);
     try {
-      await exportGift(event, person.id);
-      setNotice(
-        "Đã lưu món quà của bạn. Mở tệp HTML để xem lại bất cứ lúc nào.",
-      );
+      const result = await exportGift(event, person.id);
+      if (result?.hasExternalVideo) {
+        setNotice(
+          "Đã lưu thiệp kỷ niệm và tệp video về máy. Bạn hãy để 2 tệp trong cùng một thư mục để xem lại offline trọn vẹn nhất!",
+        );
+      } else {
+        setNotice(
+          "Đã lưu món quà của bạn. Mở tệp HTML để xem lại bất cứ lúc nào.",
+        );
+      }
     } catch (e) {
       setNotice((e as Error).message);
     } finally {
@@ -305,9 +311,10 @@ export function App({
             Hôm nay, <em>bạn là điều đặc biệt.</em>
           </h1>
           <button className="intro-letter intro-letter-button" onClick={() => {
-            if (videos.length && !(snapshot && !navigator.onLine)) { setVideoIndex(0); setVideoEnded(false); setScene("video"); }
+            const hasPlayable = videos.some(v => !(snapshot && !navigator.onLine && videoId(v.url)));
+            if (videos.length && hasPlayable) { setVideoIndex(0); setVideoEnded(false); setScene("video"); }
             else setScene("book");
-          }} aria-label={videos.length && !(snapshot && !navigator.onLine) ? "Xem video dành cho bạn" : "Mở sổ lời chúc"}>
+          }} aria-label={videos.length && videos.some(v => !(snapshot && !navigator.onLine && videoId(v.url))) ? "Xem video dành cho bạn" : "Mở sổ lời chúc"}>
             <Heart size={26} />
             <p>{event.intro}</p>
             <span className="handwritten">Thương yêu bạn thật nhiều!</span>
@@ -329,7 +336,7 @@ export function App({
                   void audio.play().catch(() => setAudioError(true));
               }}
             />
-          {snapshot && videoUrl && (
+          {snapshot && videoUrl && videoId(videoUrl) && (
             <p className="subtle">
               Video YouTube cần kết nối Internet.
             </p>

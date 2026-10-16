@@ -1,5 +1,5 @@
 import Papa from "papaparse";
-import { videoId } from "./media.ts";
+import { videoId, isValidVideoUrl } from "./media.ts";
 import type { GiftEvent, GiftStore, Recipient, Wish } from "./types.ts";
 export const normalize = (s: string) =>
   s.normalize("NFC").trim().toLocaleLowerCase("vi");
@@ -51,8 +51,8 @@ export function validateStore(input: unknown): string[] {
       typeof e.videoUrl !== "string"
     )
       errors.push("Thông tin sự kiện không đầy đủ.");
-    if (typeof e.videoUrl === "string" && e.videoUrl && !videoId(e.videoUrl))
-      errors.push("Video phải là đường dẫn YouTube hợp lệ.");
+    if (typeof e.videoUrl === "string" && e.videoUrl && !isValidVideoUrl(e.videoUrl))
+      errors.push("Video phải là đường dẫn YouTube hoặc tệp video hợp lệ.");
     if (!Array.isArray(e.recipients) || !Array.isArray(e.wishes)) {
       errors.push("Danh sách người nhận/lời chúc không hợp lệ.");
       continue;
@@ -91,8 +91,8 @@ export function validateStore(input: unknown): string[] {
       people.add(r.id);
       if (r.videoMode !== undefined && !["common", "private", "both"].includes(r.videoMode))
         errors.push("Lựa chọn video của người nhận không hợp lệ.");
-      if (r.videoUrl !== undefined && (typeof r.videoUrl !== "string" || (r.videoUrl && !videoId(r.videoUrl))))
-        errors.push("Video riêng của người nhận phải là đường dẫn YouTube hợp lệ.");
+      if (r.videoUrl !== undefined && (typeof r.videoUrl !== "string" || (r.videoUrl && !isValidVideoUrl(r.videoUrl))))
+        errors.push("Video riêng của người nhận phải là đường dẫn YouTube hoặc tệp video hợp lệ.");
     }
     for (const w of e.wishes) {
       if (!w || typeof w !== "object") {

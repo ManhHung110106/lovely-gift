@@ -1,5 +1,5 @@
-import { randomBytes, scryptSync, timingSafeEqual } from "node:crypto";
-import { existsSync, readFileSync, writeFileSync, mkdirSync, renameSync, unlinkSync } from "node:fs";
+import { createHash, randomBytes, scryptSync, timingSafeEqual } from "node:crypto";
+import { existsSync, readFileSync, writeFileSync, mkdirSync, renameSync, unlinkSync, createWriteStream } from "node:fs";
 import { resolve } from "node:path";
 import type { Plugin } from "vite";
 import { validateStore } from "../src/model.ts";
@@ -44,12 +44,58 @@ export function localAdmin(): Plugin {
           return reply(200, { ok: true });
         }
         if (endpoint !== "/api/admin/login" && !authenticated) return reply(401, { error: "Vui lòng đăng nhập admin." });
+        if (endpoint === "/api/admin/media" && req.method === "POST") {
+          try {
+            const mediaDir = resolve("public/media");
+            mkdirSync(mediaDir, { recursive: true });
+            const urlObj = new URL(req.url || "", "http://localhost");
+            const clientName = urlObj.searchParams.get("name") || "video.mp4";
+            const extMatch = /\.(mp4|webm|ogg|mov|m4v|mkv|mp3|wav|png|jpg|jpeg|webp)$/i.exec(clientName);
+            const ext = extMatch ? extMatch[1].toLowerCase() : "mp4";
+            const tempName = `upload-${randomBytes(12).toString("hex")}.tmp`;
+            const tempPath = resolve(mediaDir, tempName);
+            const writeStream = createWriteStream(tempPath);
+            const hasher = createHash("sha256");
+            let totalBytes = 0;
+            const maxBytes = 1024 * 1024 * 1024; // 1 GB
+            let exceeded = false;
+
+            for await (const chunk of req) {
+              totalBytes += chunk.length;
+              if (totalBytes > maxBytes) {
+                exceeded = true;
+                break;
+              }
+              hasher.update(chunk);
+              writeStream.write(chunk);
+            }
+            writeStream.end();
+
+            if (exceeded) {
+              try { unlinkSync(tempPath); } catch {}
+              return reply(413, { error: "Tệp video vượt quá 1 GB." });
+            }
+
+            const hash = hasher.digest("hex").slice(0, 24);
+            const finalName = `${hash}.${ext}`;
+            const finalPath = resolve(mediaDir, finalName);
+            if (existsSync(finalPath)) {
+              try { unlinkSync(tempPath); } catch {}
+            } else {
+              renameSync(tempPath, finalPath);
+            }
+
+            return reply(200, { url: `/media/${finalName}` });
+          } catch (err) {
+            return reply(500, { error: "Không lưu được tệp video: " + (err as Error).message });
+          }
+        }
         try {
           let body = "";
           if (req.method !== "GET") {
             for await (const chunk of req) {
               body += chunk.toString();
-              if (body.length > 100 * 1024 * 1024) return reply(413, { error: "Gói dữ liệu quá lớn." });
+              if (body.length > 2048 * 1024 * 1024) return reply(413, { error: "Gói dữ liệu quá lớn." });
             }
           }
           if (endpoint === "/api/admin/login" && req.method === "POST") {

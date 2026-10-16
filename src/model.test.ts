@@ -33,13 +33,22 @@ describe("Recipient video sequence", () => {
   });
 });
 describe("Recipient mapping and import", () => {
-  it("accepts legacy recipients and validates each personal YouTube URL", () => {
+  it("accepts legacy recipients and validates each personal YouTube URL or video file", () => {
     const store = structuredClone(demo);
     expect(validateStore(store)).toEqual([]);
     store.events[0].recipients[0].videoUrl = "https://youtu.be/recipient01";
     expect(validateStore(store)).toEqual([]);
+    store.events[0].recipients[0].videoUrl = "data:video/mp4;base64,AAAA";
+    expect(validateStore(store)).toEqual([]);
+    store.events[0].recipients[0].videoUrl = "/media/test-video.mp4";
+    expect(validateStore(store)).toEqual([]);
+    store.events[0].videoUrl = "data:video/webm;base64,BBBB";
+    expect(validateStore(store)).toEqual([]);
     store.events[0].recipients[0].videoUrl = "javascript:alert(1)";
     expect(validateStore(store).join(" ")).toContain("Video riêng");
+    store.events[0].recipients[0].videoUrl = "";
+    store.events[0].videoUrl = "javascript:alert(1)";
+    expect(validateStore(store).join(" ")).toContain("Video");
   });
   it("normalizes Vietnamese unicode, casing and surrounding space without stripping accents", () => {
     expect(normalize("  LÍNH ")).toBe("lính");

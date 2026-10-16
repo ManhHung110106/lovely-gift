@@ -7,8 +7,8 @@
       "title": "SoDiTEC",
       "occasion": "Ngày Phụ nữ Việt Nam",
       "date": "2026-10-20",
-      "intro": "Có những điều thật đẹp, chỉ vì có bạn ở đây. Hôm nay, tụi mình gửi bạn một chút thương — và rất nhiều lời chúc từ trái tim.",
-      "videoUrl": "https://youtu.be/Q2eHne6x0-E?si=ny_pb1i0-ANkZ3tM",
+      "intro": "Dù cho nắng táp mưa sa,\nDù cho gió lặng, sương nhòa đêm thâu.\nDù cho nàng hoá thành Sâu,\nLòng ta son sắt một câu thương nàng ❤️",
+      "videoUrl": "/media/f659c6a454471a816816c239.mp4",
       "musicUrl": "/media/3379067e2dcb40220f4fcbf6.mp3",
       "theme": "rose",
       "recipients": [
@@ -16,86 +16,153 @@
           "id": "fcd4ec65-9993-4ef9-9516-396a78c1f930",
           "name": "Các bạn nữ của SoDiTEC",
           "account": "SoDiTEC-Women",
-          "photos": [],
-          "videoUrl": "https://youtu.be/BB49x_uMlGA?si=NxBMwsQaVw3049hc"
+          "photos": [
+            "/media/abe2e8ad7c23f6d0aa2a4187.webp",
+            "/media/f96aff14efe2152f4f23805a.webp",
+            "/media/98c4438d8db0b835320f6533.webp",
+            "/media/b818753b897c9e119a49c25f.webp",
+            "/media/c68fa5dc764849bbaacb0a09.webp"
+          ],
+          "videoUrl": ""
         },
         {
           "id": "ha-dan-72418",
           "name": "Trần Hà Đan",
           "account": "Trần Hà Đan 72418",
-          "photos": []
+          "photos": [
+            "/media/7f159986b333128de8dbd347.webp",
+            "/media/ec333f17dba6490597788c4a.webp",
+            "/media/03a11677cdc2ec71ce5c8c70.webp",
+            "/media/421470cd0a3f4fb7927e17a0.webp"
+          ]
         },
         {
           "id": "tam-thu-53902",
-          "name": "Nguyễn Thị Tâm Thư",
+          "name": "Tâm Thư",
           "account": "Nguyễn Thị Tâm Thư 53902",
-          "photos": []
+          "photos": [
+            "/media/20bdd1235b5d30079119b9a7.webp",
+            "/media/ddf5c8d502f3a9264fe2103f.webp",
+            "/media/a8cc741e05f8226030492c57.webp"
+          ]
         },
         {
           "id": "minh-ngoc-81635",
           "name": "Phạm Minh Ngọc",
           "account": "Phạm Minh Ngọc 81635",
-          "photos": []
+          "photos": [
+            "/media/294dce2d23a89047f303d0ce.webp",
+            "/media/64c105664ab2643be363b5fd.webp",
+            "/media/3f0786285a364ccbf9925ab1.webp",
+            "/media/7dea56261e51efd98fba24d8.webp",
+            "/media/9c9704b06a255ff132815656.webp",
+            "/media/a914dfe4695c0329a992315e.webp",
+            "/media/43f54effd20ead448a262384.webp",
+            "/media/c8c540d3034b7a48a9810bed.webp",
+            "/media/8213019edc1a9a1307c4fcad.webp",
+            "/media/462c5e78f2c63a3b73ca1258.webp"
+          ]
         },
         {
           "id": "minh-chau-29471",
           "name": "Phạm Minh Châu",
           "account": "Phạm Minh Châu 29471",
-          "photos": []
+          "photos": [
+            "/media/1a9cb91d228e774418537d0f.webp",
+            "/media/7a1534e660f08b40e8b885bb.webp",
+            "/media/92d8d86e45cb00f4d78a10b7.webp"
+          ]
         },
         {
           "id": "bao-chau-64819",
-          "name": "Phùng Dương Bảo Châu",
+          "name": "Bảo Châu",
           "account": "Phùng Dương Bảo Châu 64819",
-          "photos": []
+          "photos": [
+            "/media/0e1486cf0643602a523c2d13.webp",
+            "/media/42b21a0c0e6625de7ae24869.webp",
+            "/media/88d744c36b4738a9f8a7a3d1.webp"
+          ]
         },
         {
           "id": "thuy-mai-38152",
-          "name": "Phan Thị Thúy Mai",
+          "name": "Thúy Mai",
           "account": "Phan Thị Thúy Mai 38152",
-          "photos": []
+          "photos": [
+            "/media/9c21de89fcc715735b9a20d3.webp",
+            "/media/19de5a0b32a7914a8e1d79d0.webp",
+            "/media/1bafd5cf4241cd3c6cce7488.webp"
+          ]
         },
         {
           "id": "thanh-thao-91740",
-          "name": "Đồng Nguyên Thanh Thảo",
+          "name": "Thanh Thảo",
           "account": "Đồng Nguyên Thanh Thảo 91740",
-          "photos": []
+          "photos": [
+            "/media/b067b8663736a2397f8ad0eb.webp",
+            "/media/fd69295d53fa1a81083dcaec.webp",
+            "/media/1a37b057e50b7599758cf653.webp"
+          ]
         },
         {
           "id": "anh-phuong-45283",
-          "name": "Huỳnh Nguyễn Anh Phương",
+          "name": "Anh Phương",
           "account": "Huỳnh Nguyễn Anh Phương 45283",
-          "photos": []
+          "photos": [
+            "/media/36a12c6722e133bfdd47179c.webp",
+            "/media/00cb4faee5abdcea3ce310fa.webp",
+            "/media/84ecbadb1dc6b121ae755ff4.webp"
+          ]
         },
         {
           "id": "ngoc-anh-17395",
           "name": "Trần Ngọc Ánh",
           "account": "Trần Ngọc Ánh 17395",
-          "photos": []
+          "photos": [
+            "/media/27ee8b3d0de8b2039416d9f7.webp",
+            "/media/f1172930451e6f96a67224e1.webp"
+          ]
         },
         {
           "id": "bao-trang-82641",
-          "name": "Nguyễn Thị Bảo Trang",
+          "name": "Bảo Trang",
           "account": "Nguyễn Thị Bảo Trang 82641",
-          "photos": []
+          "photos": [
+            "/media/b242656b5cc9e118d88ea982.webp",
+            "/media/0c52e12181a7f098f381a050.webp",
+            "/media/535ad50086d45d78d388e5eb.webp"
+          ]
         },
         {
           "id": "khanh-linh-50927",
           "name": "Bùi Khánh Linh",
           "account": "Bùi Khánh Linh 50927",
-          "photos": []
+          "photos": [
+            "/media/6a748b98dac680405af455be.webp",
+            "/media/6ca502eebe187ae356aedae2.webp",
+            "/media/b96330767024e5173b0f4ba2.webp",
+            "/media/d21c9b4d1630779db76a3656.webp",
+            "/media/58d5f89df834bb772724df3d.webp"
+          ]
         },
         {
           "id": "doan-trang-36481",
           "name": "Nguyễn Đoan Trang",
           "account": "Nguyễn Đoan Trang 36481",
-          "photos": []
+          "photos": [
+            "/media/950f36f420fe44314bef2468.webp",
+            "/media/33df9629ab14bfef0ba30b9f.webp",
+            "/media/89d3884dd2e075ffd342ed74.webp"
+          ]
         },
         {
           "id": "bao-uyen-79153",
-          "name": "Nguyễn Lâm Bảo Uyên",
+          "name": "Bảo Uyên",
           "account": "Nguyễn Lâm Bảo Uyên 79153",
-          "photos": []
+          "photos": [
+            "/media/f257522d89acad3df94f5f97.webp",
+            "/media/2c35b7c0537fd479fbdc0277.webp",
+            "/media/1e20923374531130557865df.webp"
+          ]
         },
         {
           "id": "thu-uyen-24860",
@@ -107,43 +174,70 @@
           "id": "minh-vy-61539",
           "name": "Nguyễn Minh Vy",
           "account": "Nguyễn Minh Vy 61539",
-          "photos": []
+          "photos": [
+            "/media/ed93d2794d5b0cbb3ee4785d.webp",
+            "/media/c5b6f93722862255b942675e.webp",
+            "/media/cf9a4bf57702a4f4eae24299.webp"
+          ]
         },
         {
           "id": "thu-huyen-93724",
           "name": "Nguyễn Thu Huyền",
           "account": "Nguyễn Thu Huyền 93724",
-          "photos": []
+          "photos": [
+            "/media/2720f5d0afe336ee49405fe2.webp",
+            "/media/b380248512a48667ae102a5a.webp",
+            "/media/fae7be536e001c427c193562.webp"
+          ]
         },
         {
           "id": "ha-chi-48216",
           "name": "Đỗ Hà Chi",
           "account": "Đỗ Hà Chi 48216",
-          "photos": []
+          "photos": [
+            "/media/7d7dca6bb89513c7f5bd62a5.webp",
+            "/media/eb3ca8561fbdf9ace7ee19ac.webp",
+            "/media/15aa6f71756b432e26fa3792.webp"
+          ]
         },
         {
           "id": "bich-ngoc-15938",
-          "name": "Lê Thị Bích Ngọc",
+          "name": "Bích Ngọc",
           "account": "Lê Thị Bích Ngọc 15938",
-          "photos": []
+          "photos": [
+            "/media/8d91866bb9d94e080ed11e42.webp",
+            "/media/c081fe3ae914a55d948e4767.webp",
+            "/media/27f9105eb45c47dc683c05ad.webp"
+          ]
         },
         {
           "id": "xuan-huong-70482",
           "name": "Nguyễn Xuân Hương",
           "account": "Nguyễn Xuân Hương 70482",
-          "photos": []
+          "photos": [
+            "/media/23859a2044a5c625b6f4697a.webp",
+            "/media/f16462441f735cfb8a2cfa58.webp"
+          ]
         },
         {
           "id": "minh-anh-32619",
           "name": "Tô Minh Ánh",
           "account": "Tô Minh Ánh 32619",
-          "photos": []
+          "photos": [
+            "/media/3dc894a1b60546e10223505e.webp",
+            "/media/bf6a23bbd8e97889b98854db.webp",
+            "/media/ce6e6b6fbef0ffcc1ae9df97.webp"
+          ]
         },
         {
           "id": "hanh-nhi-85941",
           "name": "Đỗ Hạnh Nhi",
           "account": "Đỗ Hạnh Nhi 85941",
-          "photos": []
+          "photos": [
+            "/media/1b6d5e36c0aebd7ba53f7f06.webp",
+            "/media/480caf2a6738a5ab5b5ef338.webp",
+            "/media/44e3fdf1bb48e7f062e877c1.webp"
+          ]
         },
         {
           "id": "yen-nhi-63175",
@@ -155,13 +249,19 @@
           "id": "mai-hoa-29508",
           "name": "Lê Mai Hoa",
           "account": "Lê Mai Hoa 29508",
-          "photos": []
+          "photos": [
+            "/media/aebb5b1b0210e011247fbe3f.webp",
+            "/media/a3a7a4643db318a61dbdf4fa.webp",
+            "/media/1b84bcba6e95e485705f7379.webp"
+          ]
         },
         {
           "id": "huyen-trang-41836",
           "name": "Trần Huyền Trang",
           "account": "Trần Huyền Trang 41836",
-          "photos": []
+          "photos": [
+            "/media/52cb860c74ee2009bb80f464.webp"
+          ]
         },
         {
           "id": "thuy-linh-76294",
@@ -173,73 +273,132 @@
           "id": "ngoc-anh-18450",
           "name": "Tạ Ngọc Anh",
           "account": "Tạ Ngọc Anh 18450",
-          "photos": []
+          "photos": [
+            "/media/14ebfbbd0a9af791f944282d.webp"
+          ]
         },
         {
           "id": "my-duyen-52739",
-          "name": "Trần Thị Mỹ Duyên",
+          "name": "Mỹ Duyên",
           "account": "Trần Thị Mỹ Duyên 52739",
-          "photos": []
+          "photos": [
+            "/media/67512b0e5f0c89500f8a8c5d.webp",
+            "/media/71910a71fc5b520d3ef1d3a0.webp",
+            "/media/11bd8b17e8547b9ad36ed9b4.webp",
+            "/media/b3888b28ce9dcbac4c8ff8a7.webp",
+            "/media/43220f74b0543650ba956d9e.webp"
+          ]
         },
         {
           "id": "thuy-dung-89361",
-          "name": "Lê Thị Thùy Dung",
+          "name": "Thùy Dung",
           "account": "Lê Thị Thùy Dung 89361",
-          "photos": []
+          "photos": [
+            "/media/cd8960710e6173d7454cdf6a.webp"
+          ]
         },
         {
           "id": "thuy-nga-34185",
           "name": "Phạm Thùy Nga",
           "account": "Phạm Thùy Nga 34185",
-          "photos": []
+          "photos": [
+            "/media/6307484fb278c45cd8c8421a.webp",
+            "/media/68fa8f4519d4c503e8e19261.webp"
+          ]
         },
         {
           "id": "ngoc-mai-67249",
           "name": "Trần Ngọc Mai",
           "account": "Trần Ngọc Mai 67249",
-          "photos": []
+          "photos": [
+            "/media/65de0e743a0a8fd7596f3b6c.webp",
+            "/media/b9ba44a6d0cb175391b19a08.webp",
+            "/media/3415d34572e1705309d78107.webp",
+            "/media/840856b6e8480631ce63cfbb.webp"
+          ]
         },
         {
           "id": "phuong-anh-20583",
           "name": "Nguyễn Phương Anh",
           "account": "Nguyễn Phương Anh 20583",
-          "photos": []
+          "photos": [
+            "/media/b2f546ba28b1988d6d6736c5.webp",
+            "/media/7449cd1df80acd56a091df2e.webp",
+            "/media/00d77d4d1ab5360db3372874.webp",
+            "/media/12db6b996d03561c2374121b.webp"
+          ]
         },
         {
           "id": "hong-hanh-94817",
-          "name": "Vũ Thị Hồng Hạnh",
+          "name": "Hồng Hạnh",
           "account": "Vũ Thị Hồng Hạnh 94817",
-          "photos": []
+          "photos": [
+            "/media/fcdfd3867cfe6ae8fad8d861.webp",
+            "/media/1437f379f2a491713744241b.webp",
+            "/media/fa23a4460756adaec92d4e1a.webp"
+          ]
         },
         {
           "id": "mai-linh-51628",
           "name": "Đỗ Nguyễn Mai Linh",
           "account": "Đỗ Nguyễn Mai Linh 51628",
-          "photos": []
+          "photos": [
+            "/media/0d0627d5f9c8f8edc50ddf32.webp",
+            "/media/bb85ab23d08f0f84bbfc2e12.webp",
+            "/media/d37fb4b2d2c20912aa13a674.webp"
+          ]
         },
         {
           "id": "my-linh-110111",
           "name": "Lằm Mỹ Linh",
           "account": "Lằm Mỹ Linh 110111",
-          "photos": []
+          "photos": [
+            "/media/5b8ba5abd1f244d2e78c078f.webp",
+            "/media/3452ebd1995392d7507a9267.webp",
+            "/media/a3ce7a285950d538b28ae191.webp",
+            "/media/13505aba95e0929137a74786.webp"
+          ]
         },
         {
           "id": "bich-phuong-99999",
           "name": "Phạm Bích Phương",
           "account": "Phạm Bích Phương 99999",
-          "photos": []
+          "photos": [
+            "/media/9ff32fcd28cc873d913a51e2.webp",
+            "/media/07ee37316b8a0e09392a703f.webp",
+            "/media/5e39f4f543ea3afd4fa47782.webp",
+            "/media/91c452548b1aa54c347e7852.webp",
+            "/media/ba7afffce3253ce7a53a846a.webp",
+            "/media/e92909b73e7a03ed6df04413.webp",
+            "/media/7df9123d56d559b47165b45b.webp",
+            "/media/464318dfb9cc0bf5ec2168ef.webp",
+            "/media/5319435143c3e0af3192489e.webp",
+            "/media/a276c03cfaa58bd4962f5539.webp",
+            "/media/58b702e86093b079aa422663.webp",
+            "/media/4fde0d5ea4f30cb35a9d4989.webp"
+          ]
         },
         {
           "id": "hanh-nguyen-86868",
           "name": "Lê Hạnh Nguyên",
           "account": "Lê Hạnh Nguyên 86868",
-          "photos": []
+          "photos": [
+            "/media/e64f5f9215e86045aa41f889.webp",
+            "/media/2dc26ac566b9faf07e955ccf.webp",
+            "/media/4f2dba609ee00375856c6922.webp",
+            "/media/32dbd34571a06a425076a7f3.webp",
+            "/media/b87ab0374c891ec99b08a026.webp"
+          ]
         },
         {
           "id": "my-duyen-02347",
           "name": "Nguyễn Mỹ Duyên",
           "account": "Nguyễn Mỹ Duyên 02347",
-          "photos": []
+          "photos": [
+            "/media/34e6ae3f9b0a344c2f6ebe84.webp",
+            "/media/10f35322e61b743c62748674.webp",
+            "/media/ae013f7a523a1efdeaca3a07.webp"
+          ]
         },
         {
           "id": "bao-thu-09202",
@@ -251,10 +410,890 @@
           "id": "linh-duyen-92345",
           "name": "Trương Linh Duyên",
           "account": "Trương Linh Duyên 92345",
-          "photos": []
+          "photos": [
+            "/media/a7224873605d74bc1c510b03.webp",
+            "/media/8bb7f97247e7b9df7e76e7ab.webp",
+            "/media/a9e2de2cb8511d572bf2b9bc.webp"
+          ]
         }
       ],
-      "wishes": []
+      "wishes": [
+        {
+          "id": "gui-ha-dan-72418-1-975",
+          "recipientId": "ha-dan-72418",
+          "sender": "Fuuki",
+          "message": "Chúc cậu 20/10 vui vẻeeeeeeeeeee và đừng làm tượng nữa nhé :penguin:",
+          "order": 1
+        },
+        {
+          "id": "gui-ha-dan-72418-2-531",
+          "recipientId": "ha-dan-72418",
+          "sender": "4ND4NHCUCM4NH",
+          "message": "Chúc cậu 20/10 thật vui vẻ nhen. Đêu là gen 4 và cùng ban với nhau mình mong cậu có thể gắn bó thật lâu với SoDiTEC và càng ngày càng gắn bó hơn với ban hêhehe",
+          "order": 2
+        },
+        {
+          "id": "gui-ha-dan-72418-3-675",
+          "recipientId": "ha-dan-72418",
+          "sender": "Sâu đực",
+          "message": "Chúc cậu 20/10 thật vui vẻ ha:>",
+          "order": 3
+        },
+        {
+          "id": "gui-ha-dan-72418-4-771",
+          "recipientId": "ha-dan-72418",
+          "sender": "Bạn nam SoDiTEC",
+          "message": "Chúc mừng 20/10 cậu, chúc cậu luôn rạng rỡ:3",
+          "order": 4
+        },
+        {
+          "id": "gui-tam-thu-53902-1-403",
+          "recipientId": "tam-thu-53902",
+          "sender": "Fuuki",
+          "message": "Chúc Tâm Thư 20/10 vui vẻ nhaaa! Mong cậu ở nhiệm kỳ mới tại SoDiTEC lúc nào cũng tràn đầy năng lượng, học tập đỉnh chóp và không bao giờ bị deadline trêu đùa :>",
+          "order": 1
+        },
+        {
+          "id": "gui-tam-thu-53902-2-153",
+          "recipientId": "tam-thu-53902",
+          "sender": "Sâu đực",
+          "message": "Chúc cậu 20/10 thật nhiều niềm vui",
+          "order": 2
+        },
+        {
+          "id": "gui-tam-thu-53902-3-210",
+          "recipientId": "tam-thu-53902",
+          "sender": "Bạn nam SoDiTEC",
+          "message": "Chúc mừng 20/10 cậu, chúc cậu lun xinh đẹp",
+          "order": 3
+        },
+        {
+          "id": "gui-minh-ngoc-81635-1-692",
+          "recipientId": "minh-ngoc-81635",
+          "sender": "Fuuki",
+          "message": "Chúc Minh Ngọc một ngày 20/10 thật rực rỡ và ngập tràn niềm vui! Cùng là mem mới, chúc cậu sớm có thật nhiều kỷ niệm cháy hết mình cùng đại gia đình SoDiTEC nhé!",
+          "order": 1
+        },
+        {
+          "id": "gui-minh-ngoc-81635-2-973",
+          "recipientId": "minh-ngoc-81635",
+          "sender": "BenEagle",
+          "message": "Hy vọng Minh Ngọc sẽ có ngày 20/10 thật sự đáng nhớ bên những bó hoa và hộp quà. Chúc cậu luôn xinh đẹp, rạng rỡ, tự tin và tỏa sáng nhé.",
+          "order": 2
+        },
+        {
+          "id": "gui-minh-ngoc-81635-3-652",
+          "recipientId": "minh-ngoc-81635",
+          "sender": "Mie",
+          "message": "Chúc Minh Ngọc 20/10 luôn xinh đẹp, vui vẻ, học tập thật tốt và gặp thật nhiều điều may mắn nhé!",
+          "order": 3
+        },
+        {
+          "id": "gui-minh-chau-29471-1-982",
+          "recipientId": "minh-chau-29471",
+          "sender": "Fuuki",
+          "message": "20/10 chúc Minh Châu luôn xinh tươi, yêu đời và giữ vững tinh thần \"chiến thần\" vượt qua mọi kỳ thi lẫn dự án sắp tới. Cố lên người đồng đội mới nhé :v",
+          "order": 1
+        },
+        {
+          "id": "gui-minh-chau-29471-2-435",
+          "recipientId": "minh-chau-29471",
+          "sender": "Sâu đực",
+          "message": "20/10 chúc Minh Châu sáng như minh châu, quý báu như minh châu:>",
+          "order": 2
+        },
+        {
+          "id": "gui-minh-chau-29471-3-445",
+          "recipientId": "minh-chau-29471",
+          "sender": "Bạn nam SoDiTEC",
+          "message": "Chúc cậu 20/10 nhiều niềm vui hẹ hẹ<3",
+          "order": 3
+        },
+        {
+          "id": "gui-bao-chau-64819-1-492",
+          "recipientId": "bao-chau-64819",
+          "sender": "Fuuki",
+          "message": "Chúc Bảo Châu 20/10 nhận được thật nhiều hoa, nhiều quà và nhiều lời khen nha! Mong chúng mình sẽ có một hành trình thật đáng nhớ tại SoDiTEC :3",
+          "order": 1
+        },
+        {
+          "id": "gui-bao-chau-64819-2-500",
+          "recipientId": "bao-chau-64819",
+          "sender": "Sâu đực",
+          "message": "Chúc Bảo Châu 20/10 luôn tươi tắn, xinh xắn, gặp nhiều may mắn",
+          "order": 2
+        },
+        {
+          "id": "gui-bao-chau-64819-3-755",
+          "recipientId": "bao-chau-64819",
+          "sender": "Bạn nam SoDiTEC",
+          "message": "Chúc Bảo Châu 20/10 chúc bạn luôn tích cực, zui zẻ khi tham gia CLB cũng như làm tình nguyện hết mình nho",
+          "order": 3
+        },
+        {
+          "id": "gui-thuy-mai-38152-1-677",
+          "recipientId": "thuy-mai-38152",
+          "sender": "msi",
+          "message": "Hy vọng cậu đã có một ngày 20/10 thật trọn vẹn, chúc cậu sẽ có một năm làm việc thuận lợi và thành công nhé.",
+          "order": 1
+        },
+        {
+          "id": "gui-thuy-mai-38152-2-543",
+          "recipientId": "thuy-mai-38152",
+          "sender": "BenEagle",
+          "message": "Thùy Mai, chúc bạn một ngày 20/10 thật bất ngờ, hạnh phúc, lắng đọng và trọn vén nhé. Mình hy vọng bạn sẽ có những kỉ niệm quý giá cùng đại gia đình sâu nhé.",
+          "order": 2
+        },
+        {
+          "id": "gui-thuy-mai-38152-3-325",
+          "recipientId": "thuy-mai-38152",
+          "sender": "nxl",
+          "message": "Thời gian sẽ đưa chị qua những tương lai chưa tới, những ước mơ chị còn đang theo đuổi, những kí ức đẹp một lần nữa được gọi tên, và những khoảnh khắc bình thường nhưng lại hoá thành vĩnh cửu.  Chúng ta chẳng thể gặp nhau sớm hơn, nhưng em mong những kỉ niệm với câu lạc bộ sẽ ở lại đủ lâu để trở thành một dấu ấn đậm sâu trong suốt hành trình chị đi. Chúc chị luôn được yêu thương, được trân tr���ng, và luôn biết mình là một điều tuyệt đẹp.",
+          "order": 3
+        },
+        {
+          "id": "gui-thanh-thao-91740-1-351",
+          "recipientId": "thanh-thao-91740",
+          "sender": "Fuuki",
+          "message": "Chúc Thảo một ngày 20/10 hạnh phúc đong đầy, và mãi mãi về sau luôn thế nhé",
+          "order": 1
+        },
+        {
+          "id": "gui-thanh-thao-91740-2-829",
+          "recipientId": "thanh-thao-91740",
+          "sender": "Sâu đực",
+          "message": "20/10, anh chúc em luôn hạnh phúc",
+          "order": 2
+        },
+        {
+          "id": "gui-thanh-thao-91740-3-640",
+          "recipientId": "thanh-thao-91740",
+          "sender": "Bạn nam SoDiTEC",
+          "message": "Chúc Thảo 20/10 ngày càng toả sáng",
+          "order": 3
+        },
+        {
+          "id": "gui-anh-phuong-45283-1-451",
+          "recipientId": "anh-phuong-45283",
+          "sender": "clsp",
+          "message": "Chúc Anh Phương một ngày 20/10 đầy hạnh phúc và xinh tươi, vẫn luôn giữ được nụ cười tỏa nắng ấy nhé :>>>>>",
+          "order": 1
+        },
+        {
+          "id": "gui-anh-phuong-45283-2-462",
+          "recipientId": "anh-phuong-45283",
+          "sender": "Sâu đực",
+          "message": "Chúc cậu 20/10 luôn vui vẻ, luôn theo đuổi ước mơ của mình",
+          "order": 2
+        },
+        {
+          "id": "gui-anh-phuong-45283-3-656",
+          "recipientId": "anh-phuong-45283",
+          "sender": "Bạn nam SoDiTEC",
+          "message": "Anh Phương học giỏi lắm cho chúng mình xin vía nhé. Chúc cậu có một ngày 20/10 thật tuyệt",
+          "order": 3
+        },
+        {
+          "id": "gui-ngoc-anh-17395-1-992",
+          "recipientId": "ngoc-anh-17395",
+          "sender": "BenEagle",
+          "message": "Chúc Ngọc Ánh có một ngày 20/10 tràn ngập những bông hoa, món quà và tiếng cười nhé.",
+          "order": 1
+        },
+        {
+          "id": "gui-ngoc-anh-17395-2-563",
+          "recipientId": "ngoc-anh-17395",
+          "sender": "Fuuki",
+          "message": "Chúc Ngọc Ánh 20/10 luôn tỏa sáng rạng rỡ đúng như tên của cậu vậy! Chúc cậu học giỏi, GPA cao vút và luôn cười thật tươi mỗi ngày nhaaa!",
+          "order": 2
+        },
+        {
+          "id": "gui-ngoc-anh-17395-3-870",
+          "recipientId": "ngoc-anh-17395",
+          "sender": "Mie",
+          "message": "Chúc mừng 20/10 Ngọc Ánh! Chúc bạn luôn xinh đẹp, vui vẻ, học tập thật tốt và mỗi ngày đều có nhiều niềm vui nhé!",
+          "order": 3
+        },
+        {
+          "id": "gui-bao-trang-82641-1-305",
+          "recipientId": "bao-trang-82641",
+          "sender": "Fuuki",
+          "message": "Chúc Bảo Trang 20/10 ngập tràn hoa với quà nhé, cứ luôn tươi tắn, vui vẻ và yêu đời như thế này nha!",
+          "order": 1
+        },
+        {
+          "id": "gui-bao-trang-82641-2-221",
+          "recipientId": "bao-trang-82641",
+          "sender": "Sâu đực",
+          "message": "Chúc cậu có một ngày 20/10 thật tuyệt vời",
+          "order": 2
+        },
+        {
+          "id": "gui-bao-trang-82641-3-104",
+          "recipientId": "bao-trang-82641",
+          "sender": "Bạn nam SoDiTEC",
+          "message": "Chúc Trang có một ngày 20/10 tràn ngập niềm vui",
+          "order": 3
+        },
+        {
+          "id": "gui-khanh-linh-50927-1-726",
+          "recipientId": "khanh-linh-50927",
+          "sender": "azu",
+          "message": "Chúc người đẹp có tên giống bnq của tớ 20/10 vui v�� yêu đời hạnh phúc nhiều tiền. Chúc những điều hạnh phúc nhất sẽ đến với c",
+          "order": 1
+        },
+        {
+          "id": "gui-khanh-linh-50927-2-763",
+          "recipientId": "khanh-linh-50927",
+          "sender": "Sâu đực",
+          "message": "Chúc người đẹp có một ngày 20/10 thật đẹp",
+          "order": 2
+        },
+        {
+          "id": "gui-khanh-linh-50927-3-769",
+          "recipientId": "khanh-linh-50927",
+          "sender": "Bạn nam SoDiTEC",
+          "message": "20/10 chúc cậu có thật nhiều kỷ niệm đẹp với CLB nha",
+          "order": 3
+        },
+        {
+          "id": "gui-doan-trang-36481-1-128",
+          "recipientId": "doan-trang-36481",
+          "sender": "msi",
+          "message": "Dù chưa nói chuyện bao giờ, nhưng chúc cậu luôn thuận lợi trong mọi việc, luôn được mọi người yêu thương và quan trọng nhất, luôn được là chính mình nhé.",
+          "order": 1
+        },
+        {
+          "id": "gui-doan-trang-36481-2-331",
+          "recipientId": "doan-trang-36481",
+          "sender": "azu",
+          "message": "Đã ấn tượng you từ lúc you nhắn tin đầu tiên trong nhóm ctv, chúc cậu có một ngày 20/10 thật hạnh phúc và ý nghĩa. Và cũng gửi đến cậu những điều đáng yêu, may mắn nhất trong cuộc sống nhé.",
+          "order": 2
+        },
+        {
+          "id": "gui-doan-trang-36481-3-245",
+          "recipientId": "doan-trang-36481",
+          "sender": "Sâu đực",
+          "message": "Tiếp xúc với cậu thấy cậu duyên và chất thật, chúc 20/10 vui vẻ nghen",
+          "order": 3
+        },
+        {
+          "id": "gui-bao-uyen-79153-1-793",
+          "recipientId": "bao-uyen-79153",
+          "sender": "Fuuki",
+          "message": "Chúc Bảo Uyên có một ngày 20/10 thật ấm áp và trọn vẹn! Dù chưa có dịp nói chuyện nhiều nhưng chúc cậu mọi điều thuận lợi và luôn gặp may mắn trong cuộc sống nhé :>",
+          "order": 1
+        },
+        {
+          "id": "gui-bao-uyen-79153-2-249",
+          "recipientId": "bao-uyen-79153",
+          "sender": "Sâu đực",
+          "message": "Chúc cậu có ngày 20/10 ngập tràn niềm vui",
+          "order": 2
+        },
+        {
+          "id": "gui-bao-uyen-79153-3-897",
+          "recipientId": "bao-uyen-79153",
+          "sender": "Bạn nam SoDiTEC",
+          "message": "Chúc cậu có một ngày 20/10 thật nhiều ý nghĩa và kỷ niệm nhé",
+          "order": 3
+        },
+        {
+          "id": "gui-thu-uyen-24860-1-312",
+          "recipientId": "thu-uyen-24860",
+          "sender": "azu",
+          "message": "Chúc chị sẽ luôn xinh đẹp và hạnh phúc, luôn gặp được những điều hạnh phúc và thuận lời trong cuộc sống ạ",
+          "order": 1
+        },
+        {
+          "id": "gui-thu-uyen-24860-2-569",
+          "recipientId": "thu-uyen-24860",
+          "sender": "Sâu đực",
+          "message": "Chúc bạn luôn có một tương lai rạng rỡ nha",
+          "order": 2
+        },
+        {
+          "id": "gui-thu-uyen-24860-3-307",
+          "recipientId": "thu-uyen-24860",
+          "sender": "Bạn nam SoDiTEC",
+          "message": "Chúc cậu 20/10 có thật nhiều kỷ niệm thật đẹp bên người thương hoặc cùng chúng tớ trong CLB nha",
+          "order": 3
+        },
+        {
+          "id": "gui-minh-vy-61539-1-355",
+          "recipientId": "minh-vy-61539",
+          "sender": "msi",
+          "message": "Chúc cậu 20/10 với mọi điều tốt đẹp nhất, mong rằng những điều cậu muốn sẽ trở thành hiện thực nhé.",
+          "order": 1
+        },
+        {
+          "id": "gui-minh-vy-61539-2-368",
+          "recipientId": "minh-vy-61539",
+          "sender": "Sâu đực",
+          "message": "Chúc cậu 20/10 thật hạnh phúc và vui vẻ, hãy cười thật nhiều nhé",
+          "order": 2
+        },
+        {
+          "id": "gui-minh-vy-61539-3-289",
+          "recipientId": "minh-vy-61539",
+          "sender": "Bạn nam SoDiTEC",
+          "message": "20/10 chúc cậu ngày càng xinh xắn nhó",
+          "order": 3
+        },
+        {
+          "id": "gui-thu-huyen-93724-1-181",
+          "recipientId": "thu-huyen-93724",
+          "sender": "PCN",
+          "message": "Tiếp xúc càng lâu, thấy chị Huyền càng thú vị á:') Em chúc chị Huyền hạ cánh an toàn, cất cánh thành công trên con đường sự nghiệp:>",
+          "order": 1
+        },
+        {
+          "id": "gui-thu-huyen-93724-2-609",
+          "recipientId": "thu-huyen-93724",
+          "sender": "Sâu đực",
+          "message": "20/10 chúc chị Huyền mãi cute và dịu kha",
+          "order": 2
+        },
+        {
+          "id": "gui-thu-huyen-93724-3-911",
+          "recipientId": "thu-huyen-93724",
+          "sender": "Bạn nam SoDiTEC",
+          "message": "Người đẹp không được phép buồn, chúng em luôn bên chị, không lỡ rời xa đâu. Chúc chị 20/10 thật hạnh phúc với nhiều nến và hoa",
+          "order": 3
+        },
+        {
+          "id": "gui-ha-chi-48216-1-944",
+          "recipientId": "ha-chi-48216",
+          "sender": "mineas",
+          "message": "Chúc đại tỷ 20/10 luôn xinh đẹp, bão tim bão tương tác và không bao giờ bị deadline dí!",
+          "order": 1
+        },
+        {
+          "id": "gui-ha-chi-48216-1-162",
+          "recipientId": "ha-chi-48216",
+          "sender": "Ishine",
+          "message": "Chúc chị một 20/10 ý nghĩa, khó quên, ngày càng hát, luôn slay như mọi khi và trên hết là sớm tìm dc nhà tiên tri bray cho mình ;))",
+          "order": 2
+        },
+        {
+          "id": "gui-ha-chi-48216-3-660",
+          "recipientId": "ha-chi-48216",
+          "sender": "gen4ht?",
+          "message": "Chúc chị luôn xinh và hát hay như bây giờ",
+          "order": 3
+        },
+        {
+          "id": "gui-ha-chi-48216-4-606",
+          "recipientId": "ha-chi-48216",
+          "sender": "i3i_hun.g",
+          "message": "Người dịu dàng với cả thế giới, từ giờ cả thế giới luôn dịu dàng với Chie nhé:>",
+          "order": 4
+        },
+        {
+          "id": "gui-ha-chi-48216-5-592",
+          "recipientId": "ha-chi-48216",
+          "sender": "nxl",
+          "message": "Người ta bảo thời gian là kẻ trộm, và ký ức rồi sẽ phai nhòa như phấn trắng trong mưa. Có những người đi thanh xuân, mang trong mình một cô bé luôn khao khát được yêu thương vô điều kiện, được khóc mà không thấy xấu hổ, và được bình yên ngủ quên trên những dịu dàng của ngày cũ. Em nhìn thấy ở chị một người con gái mạnh mẽ, đã kiên cường đi qua bao mùa nắng mưa, và cả một cô bé trong trẻo vẫn đang hiện hữu bên trong. Nếu ký ức có phai nhòa như phấn trong mưa, thì hãy để SoDiTEC cùng chị viết nên những ký ức mới. Chúc chị Chi luôn được yêu thương, được trân trọng, và luôn biết mình là một điều tuyệt đẹp. Cảm ơn chị vì đã là một mảnh ghép tuyệt đẹp, rạng rỡ và không thể thay thế của CLB chúng ta. Hãy cứ tỏa sáng theo cách của riêng mình chị nhé.",
+          "order": 5
+        },
+        {
+          "id": "gui-bich-ngoc-15938-1-540",
+          "recipientId": "bich-ngoc-15938",
+          "sender": "dtd",
+          "message": "Chúc chị luôn xinh đẹp như bông hoa và tỏa sáng hơn mặt trời nhen<3",
+          "order": 1
+        },
+        {
+          "id": "gui-bich-ngoc-15938-2-978",
+          "recipientId": "bich-ngoc-15938",
+          "sender": "Sâu đực",
+          "message": "Chúc cậu luôn xinh tươi:>>",
+          "order": 2
+        },
+        {
+          "id": "gui-bich-ngoc-15938-3-317",
+          "recipientId": "bich-ngoc-15938",
+          "sender": "Bạn nam SoDiTEC",
+          "message": "Chúc cậu luôn hạnh phúc và kiếm được nhiều xiền nhé",
+          "order": 3
+        },
+        {
+          "id": "gui-xuan-huong-70482-1-836",
+          "recipientId": "xuan-huong-70482",
+          "sender": "em Hùng",
+          "message": "Chúc chị em luôn được là chính mình, sống lạc quan yêu đời, nhiều trải nghiệm thú zị=))",
+          "order": 1
+        },
+        {
+          "id": "gui-xuan-huong-70482-2-640",
+          "recipientId": "xuan-huong-70482",
+          "sender": "Sâu đực",
+          "message": "Nhân ngày 20/10, em chúc chị luôn khoẻ mạnh và hạnh phúc ạ",
+          "order": 2
+        },
+        {
+          "id": "gui-xuan-huong-70482-3-165",
+          "recipientId": "xuan-huong-70482",
+          "sender": "Bạn nam SoDiTEC",
+          "message": "Chúc chị 20/10 có thật nhiều điều ý nghĩa, chúng em luôn ở đây đồng hành cùng chị",
+          "order": 3
+        },
+        {
+          "id": "gui-minh-anh-32619-1-738",
+          "recipientId": "minh-anh-32619",
+          "sender": "em Hiển",
+          "message": "Xin chúc các chị em luôn luôn vui vẻ, thế giới vẫn còn nhiều điều thú vị đang chờ đón nên hãy lạc quan và sống hết mình ạ!!!!, chúc chị em có một ngày 20/10 thật là ý nghĩa",
+          "order": 1
+        },
+        {
+          "id": "gui-minh-anh-32619-2-300",
+          "recipientId": "minh-anh-32619",
+          "sender": "Sâu đực",
+          "message": "Chúc chị Minh Ánh luôn rạng rỡ như ánh bình minh:>",
+          "order": 2
+        },
+        {
+          "id": "gui-minh-anh-32619-3-853",
+          "recipientId": "minh-anh-32619",
+          "sender": "Bạn nam SoDiTEC",
+          "message": "Chúc mừng 20/10 chị, SoDiTEC yêu chị lémmm",
+          "order": 3
+        },
+        {
+          "id": "gui-hanh-nhi-85941-1-883",
+          "recipientId": "hanh-nhi-85941",
+          "sender": "Ẩn danh",
+          "message": "Chúc Nhi đạt nhiều may mắn và thành công nha",
+          "order": 1
+        },
+        {
+          "id": "gui-hanh-nhi-85941-2-980",
+          "recipientId": "hanh-nhi-85941",
+          "sender": "Sâu đực",
+          "message": "Chúc Hạnh Nhi có một ngày 20/10 thật nhiều ý nghĩa",
+          "order": 2
+        },
+        {
+          "id": "gui-hanh-nhi-85941-3-817",
+          "recipientId": "hanh-nhi-85941",
+          "sender": "Bạn nam SoDiTEC",
+          "message": "Chúng em ngưỡng mộ chị lắm, chúc chị có 20/10 thật tuyệt vời ạ",
+          "order": 3
+        },
+        {
+          "id": "gui-yen-nhi-63175-1-895",
+          "recipientId": "yen-nhi-63175",
+          "sender": "clsp",
+          "message": "Em xin được chúc người chị chuyên SP luôn xinh tươi và thành công trong công việc, bớt stress, và tiếp tục siêu năng suất như mọi khi ạ :>",
+          "order": 1
+        },
+        {
+          "id": "gui-yen-nhi-63175-2-716",
+          "recipientId": "yen-nhi-63175",
+          "sender": "Sâu đực",
+          "message": "Cảm ơn chị đã luôn hỗ trợ chúng em, chúc chị có 20/10 thật tuyệt",
+          "order": 2
+        },
+        {
+          "id": "gui-yen-nhi-63175-3-412",
+          "recipientId": "yen-nhi-63175",
+          "sender": "Bạn nam SoDiTEC",
+          "message": "Chúc mừng 20/10 chị Yến Nhi nha",
+          "order": 3
+        },
+        {
+          "id": "gui-mai-hoa-29508-1-764",
+          "recipientId": "mai-hoa-29508",
+          "sender": "bánh bao gạo lứt",
+          "message": "Lô em, hôm nay nhân ngày tốt lành, chỉ viết lời chúc để dành cho Hoa, người khôn ăn nói nửa chừng, chúc Hoa mãi trẻ lưng chừng đôi mươi. Chúc em 20/10 hạnh phúc và tài lộc.",
+          "order": 1
+        },
+        {
+          "id": "gui-mai-hoa-29508-2-567",
+          "recipientId": "mai-hoa-29508",
+          "sender": "Siu anh Hùng",
+          "message": "Chúc em thuận lợi trong nhiệm kỳ tới, luôn có niềm vui trong học tập, công việc và cuộc sống hẹ hẹ:')",
+          "order": 2
+        },
+        {
+          "id": "gui-mai-hoa-29508-3-498",
+          "recipientId": "mai-hoa-29508",
+          "sender": "em h đã ẩn danh",
+          "message": "Chúc sếp em sẽ luôn xinh gái cute hạnh phúc yêu đời ạaaaaaaaa. Chúc chị em sẽ học giỏi, không bị deadline dí, và cảm ơn sếp đã gánh em mấy ngày hôm nay <3333333, sếp cute lắm ý ạ.",
+          "order": 3
+        },
+        {
+          "id": "gui-mai-hoa-29508-4-466",
+          "recipientId": "mai-hoa-29508",
+          "sender": "Fuuki",
+          "message": "Chúc chị Mai Hoa 20/10 luôn rạng rỡ và tươi tắn đúng như tên của chị ạ! Mong chị ở nhiệm kỳ mới lúc nào cũng tràn đầy năng lượng, gánh team còng lưng mà vẫn xinh đẹp tuyệt vời nha :>",
+          "order": 4
+        },
+        {
+          "id": "gui-mai-hoa-29508-4-105",
+          "recipientId": "mai-hoa-29508",
+          "sender": "Ishine",
+          "message": "chúc chị guộc e 20/10 đáng nhớ, luôn tươi cười như tên mình và đặc biệt là phát tài phát lộc 8386 để có thêm bánh đâu xanh cho e ăn :]]",
+          "order": 74
+        },
+        {
+          "id": "gui-huyen-trang-41836-5-888",
+          "recipientId": "huyen-trang-41836",
+          "sender": "người lạ",
+          "message": "Chúc sếp 20/10 luôn luôn vui tươi và cute như mọi ngày. Mong năm nay sếp có một nhiệm kì rực rỡ với câu lạc bộ và mong có thể làm việc với sếp nhiều hơn:>",
+          "order": 3
+        },
+        {
+          "id": "gui-huyen-trang-41836-2-642",
+          "recipientId": "huyen-trang-41836",
+          "sender": "Ishine",
+          "message": "Chúc sư phụ e 20/10 vui vẻ, yêu đời, nụ cười luôn rạng rỡ trên môi xong không quên đòi đrl về cho cả nhóm",
+          "order": 2
+        },
+        {
+          "id": "gui-huyen-trang-41836-3-931",
+          "recipientId": "huyen-trang-41836",
+          "sender": "i3i_hun.g",
+          "message": "Chúc em traeng cute phô mai que 20/10 zui zẻ, dù công việc có bận thế nào thì hãy mãi là vựa muối bé nhỏ nhé:>",
+          "order": 3
+        },
+        {
+          "id": "gui-huyen-trang-41836-4-629",
+          "recipientId": "huyen-trang-41836",
+          "sender": "em h đã ẩn danh",
+          "message": "Chúc sếp em 20/10 siu hạnh phúc và ý nghĩa ạ. Em chúc chị những điều tốt đẹp nhất, và mong chị sẽ luôn giữ được sự cute, ấm áp và nhiệt huyết như này ạaa. Cảm ơn chị nhiểu ạ, my đại tỉ :3333",
+          "order": 4
+        },
+        {
+          "id": "gui-huyen-trang-41836-5-612",
+          "recipientId": "huyen-trang-41836",
+          "sender": "Mie",
+          "message": "Em chúc chị luôn xinh đẹp, nhiều sức khỏe và luôn thành công trên cương vị to lớn này. Cảm ơn chị đã luôn nhiệt tình dẫn dắt và hỗ trợ bọn em.",
+          "order": 5
+        },
+        {
+          "id": "gui-thuy-linh-76294-1-833",
+          "recipientId": "thuy-linh-76294",
+          "sender": "clsp",
+          "message": "Em chúc chị Linh 20/10 vui vẻ và hạnh phúc, sẽ luôn chăm chỉ học tập, tiến bộ hằng ngày như cách chị vẫn đang làm một cách mạnh mẽ!",
+          "order": 1
+        },
+        {
+          "id": "gui-thuy-linh-76294-2-176",
+          "recipientId": "thuy-linh-76294",
+          "sender": "Sâu đực",
+          "message": "Chúc cậu 20/10 thật hạnh phúc:>",
+          "order": 2
+        },
+        {
+          "id": "gui-thuy-linh-76294-3-482",
+          "recipientId": "thuy-linh-76294",
+          "sender": "Bạn nam SoDiTEC",
+          "message": "Chúc chị Linh có 20/10 thật ý nghĩa, tích cực hoà đồng với chúng em trong CLB nha",
+          "order": 3
+        },
+        {
+          "id": "gui-ngoc-anh-18450-1-908",
+          "recipientId": "ngoc-anh-18450",
+          "sender": "dtd",
+          "message": "Chúc chị 20/10 luôn xinh đẹp như bông hoa và tỏa sáng hơn mặt trời, mọi thứ luôn suôn sẻ và mượt như làn nước nhen<3",
+          "order": 1
+        },
+        {
+          "id": "gui-ngoc-anh-18450-2-996",
+          "recipientId": "ngoc-anh-18450",
+          "sender": "Sâu đực",
+          "message": "Chúc cậu luôn toả nắng",
+          "order": 2
+        },
+        {
+          "id": "gui-ngoc-anh-18450-3-346",
+          "recipientId": "ngoc-anh-18450",
+          "sender": "Bạn nam SoDiTEC",
+          "message": "20/10 vui vẻ nghen",
+          "order": 3
+        },
+        {
+          "id": "gui-my-duyen-52739-1-752",
+          "recipientId": "my-duyen-52739",
+          "sender": "dtd",
+          "message": "Chúc chị 20/10 luôn tươi tắn, xinh đẹp và ngập tràn hạnh phúc. Mong là công việc luôn mượt mà, làm gì cũng hoàn thành xuất sắc và lúc nào cũng giữ được nụ cười rạng rỡ nhé<3",
+          "order": 1
+        },
+        {
+          "id": "gui-my-duyen-52739-2-101",
+          "recipientId": "my-duyen-52739",
+          "sender": "Sâu đực",
+          "message": "Chị siuuu xinh siuuu giỏi, chúc chị 20/10 có thật nhiều hoa và quà",
+          "order": 2
+        },
+        {
+          "id": "gui-my-duyen-52739-3-992",
+          "recipientId": "my-duyen-52739",
+          "sender": "Bạn nam SoDiTEC",
+          "message": "Chúc chị 20/10 thật tuyệt nha, bao giờ rảnh chia sẻ cách vừa xinh vừa giỏi cho các bạn SoDiTEC biết với nhé ạ",
+          "order": 3
+        },
+        {
+          "id": "gui-thuy-dung-89361-1-998",
+          "recipientId": "thuy-dung-89361",
+          "sender": "Siu anh Hùng",
+          "message": "Chúc sứ giả hoà bình, tổ trưởng tổng cục hưu trí SoDiTEC nhiều đrl và gặt hái học bổng.",
+          "order": 1
+        },
+        {
+          "id": "gui-thuy-dung-89361-2-358",
+          "recipientId": "thuy-dung-89361",
+          "sender": "Sâu đực",
+          "message": "Chúc cậu luôn chăm chỉ, học giỏi, mang niềm vui và tiếng cười gắn kết các bạn trong CLB nha",
+          "order": 2
+        },
+        {
+          "id": "gui-thuy-dung-89361-3-618",
+          "recipientId": "thuy-dung-89361",
+          "sender": "Bạn nam SoDiTEC",
+          "message": "20/10 chúc mọi ước mơ của cậu thành hiện thực",
+          "order": 3
+        },
+        {
+          "id": "gui-thuy-nga-34185-1-966",
+          "recipientId": "thuy-nga-34185",
+          "sender": "clsp",
+          "message": "Chúc Nga 20/10 thật vui vẻ và xinh đẹp! Nga luôn là thần tượng của bọn tớ, học siêu siêu giỏi và paper như mưa!",
+          "order": 1
+        },
+        {
+          "id": "gui-thuy-nga-34185-2-926",
+          "recipientId": "thuy-nga-34185",
+          "sender": "Sâu đực",
+          "message": "Chúc Nga mãi phát huy tinh thần siêng năng học hỏi như vậy nha",
+          "order": 2
+        },
+        {
+          "id": "gui-thuy-nga-34185-3-661",
+          "recipientId": "thuy-nga-34185",
+          "sender": "Bạn nam SoDiTEC",
+          "message": "Chủ nhiệm EdTech hãy hợp tác với chúng tôi. Chúc cậu luôn hạnh phúc, có một nhiệm kỳ làm chủ nhiệm thật đáng nhớ",
+          "order": 3
+        },
+        {
+          "id": "gui-ngoc-mai-67249-1-851",
+          "recipientId": "ngoc-mai-67249",
+          "sender": "pms",
+          "message": "Chúc Mai ngày 20/10 thật hạnh phúc, luôn xinh đẹp như bây giờ và có những khoảnh khắc đáng nhớ cùng Sâu nhé :33",
+          "order": 1
+        },
+        {
+          "id": "gui-ngoc-mai-67249-2-965",
+          "recipientId": "ngoc-mai-67249",
+          "sender": "nxl",
+          "message": "Mắt Ngọc Mai là đại dương sao trời. Chúa đã đặt vào đó những viên pha lê lấp lánh, rồi để thời gian và yêu thương mài giũa. Thời gian đi qua, khẽ chạm nên đường nét của một người phụ nữ dịu dàng và ngọt ngào. Đôi mắt đó là cánh cửa mở ra thế giới yêu thương, nơi ai cũng muốn một lần bước vào. Để ta nhẹ nhàng quỳ xuống, nâng niu, ngắm nhìn một tạo vật huyền diệu: tuyệt đẹp, mạnh mẽ, đã đi qua bao điều mà vẫn tỏa sáng. Thời gian sẽ xây nên một tượng đài từ những vì sao mà chị từng nghĩ là quá xa xôi để chạm vào, và gọi mọi ánh sáng ấy là thiên đường. Chúc chị luôn được yêu thương, được trân trọng, và luôn biết mình là một điều tuyệt đẹp.",
+          "order": 2
+        },
+        {
+          "id": "gui-ngoc-mai-67249-3-922",
+          "recipientId": "ngoc-mai-67249",
+          "sender": "Bạn nam SoDiTEC",
+          "message": "Chúc Mai hạnh phúc",
+          "order": 3
+        },
+        {
+          "id": "gui-phuong-anh-20583-1-437",
+          "recipientId": "phuong-anh-20583",
+          "sender": "Quý bửu Bách khoa",
+          "message": "Chúc cậu 20/10 thật tuyệt vời",
+          "order": 1
+        },
+        {
+          "id": "gui-phuong-anh-20583-2-260",
+          "recipientId": "phuong-anh-20583",
+          "sender": "Sâu đực",
+          "message": "20/10, chúc Phanh luôn vui vẻ với đam mê của mình nhé",
+          "order": 2
+        },
+        {
+          "id": "gui-phuong-anh-20583-3-523",
+          "recipientId": "phuong-anh-20583",
+          "sender": "Bạn nam SoDiTEC",
+          "message": "Chúc Phanh luôn hạnh phúc",
+          "order": 3
+        },
+        {
+          "id": "gui-hong-hanh-94817-1-449",
+          "recipientId": "hong-hanh-94817",
+          "sender": "clsp",
+          "message": "Chúc cậu luôn xinh đẹp và tài giỏi! Chúng tớ rất thần tượng cậu :3",
+          "order": 1
+        },
+        {
+          "id": "gui-hong-hanh-94817-2-793",
+          "recipientId": "hong-hanh-94817",
+          "sender": "Đai đen",
+          "message": "Cảm ơn sự chu đáo, ân cần, cẩn thận của bạn; cầm xiền đừng để xiền rơi nhé. Chúc bạn luôn tự tin và tràn đầy sức sống, và set quả kèo solo ở Parabol!",
+          "order": 2
+        },
+        {
+          "id": "gui-hong-hanh-94817-3-249",
+          "recipientId": "hong-hanh-94817",
+          "sender": "nxl",
+          "message": "Người ta vẫn thường bảo, hành trình lớn lên là một phép thử đầy thú vị. Đôi khi, giữa những bộn bề của cuộc sống, chúng ta bất chợt nhớ về đứa trẻ ngày nào – từng hạnh phúc nhường nào, từng đắm chìm trọn vẹn trong nguồn năng lượng của chính mình và vô tư dạo bước, để lại phía sau những vệt sáng lấp lánh. Lớn lên rồi, mọi thứ đổi thay, nhưng em à, đừng để những đổi thay ấy làm phai nhạt đi niềm vui sống. Hôm nay, nhân ngày 20/10, tập thể CLB mong chị sẽ tận hưởng những điều nhỏ bé,  hành trình này,  chúng ta sẽ ngày càng giỏi hơn trong việc biến những điều bình dị thành niềm vui và biến chính mình thành những người rạng rỡ nhất. Chúc chị luôn được yêu thương, được trân trọng, và luôn biết mình là một điều tuyệt đẹp.",
+          "order": 3
+        },
+        {
+          "id": "gui-mai-linh-51628-1-336",
+          "recipientId": "mai-linh-51628",
+          "sender": "clsp",
+          "message": "Chúc người bạn ban TT một 20/10 thật đáng nhớ và hạnh phúc! Dù chưa gặp bạn nhiều lắm nhưng vẫn mong tất cả những gì tốt đẹp và thành công nhất với cậu :3",
+          "order": 1
+        },
+        {
+          "id": "gui-mai-linh-51628-2-515",
+          "recipientId": "mai-linh-51628",
+          "sender": "nxl",
+          "message": "Mong những lời chúc sẽ được ghi trên những tia nắng của bình minh ngày mới, sẽ được những cơn gió mang đi cho tới mãi ngàn sau, sẽ được mảnh đất này ôm l���y tại nơi địa tầng sâu nhất . Giữa muôn vàn điều đang chảy trôi, mong những điều đẹp đẽ nhất không cần chị phải chờ đợi, mà cứ thế nhẹ nhàng gõ cửa mỗi sớm mai, nắng chạm vai chị cũng là lúc một điều tử tế nào đó tìm đến chị thay lờ người ta chưa kịp nói. Chúc chị Mai Linh luôn được yêu thương, được trân trọng, và luôn biết mình là một điều tuyệt đẹp.",
+          "order": 2
+        },
+        {
+          "id": "gui-mai-linh-51628-3-587",
+          "recipientId": "mai-linh-51628",
+          "sender": "Bạn nam SoDiTEC",
+          "message": "Chúc cậu 20/10 có thật nhiều kỷ niệm thật đẹp bên người thương hoặc cùng chúng tớ trong CLB nha",
+          "order": 3
+        },
+        {
+          "id": "gui-my-linh-110111-1-254",
+          "recipientId": "my-linh-110111",
+          "sender": "Mạnh Hùng",
+          "message": "Chúc em học tập thật tốt ở Nga và đừng quên SoDiTEC nha",
+          "order": 1
+        },
+        {
+          "id": "gui-my-linh-110111-2-644",
+          "recipientId": "my-linh-110111",
+          "sender": "Sâu đực",
+          "message": "Hạnh phúc, học giỏi nha bạn",
+          "order": 2
+        },
+        {
+          "id": "gui-my-linh-110111-3-405",
+          "recipientId": "my-linh-110111",
+          "sender": "Bạn nam SoDiTEC",
+          "message": "Chúc cậu 20/10 có thật nhiều kỷ niệm thật đẹp bên người thương hoặc cùng chúng tớ trong CLB nha. Chúng tớ luôn chào đón cậu",
+          "order": 3
+        },
+        {
+          "id": "gui-my-duyen-02347-1-204",
+          "recipientId": "my-duyen-02347",
+          "sender": "Ẩn danh",
+          "message": "Chúc chị có một ngày 20/10 ngập tràn hoa và quà",
+          "order": 1
+        },
+        {
+          "id": "gui-my-duyen-02347-2-736",
+          "recipientId": "my-duyen-02347",
+          "sender": "Sâu đực",
+          "message": "Chúc chị luôn giỏi giang và xinh đẹp, em ngưỡng mộ chị lắm",
+          "order": 2
+        },
+        {
+          "id": "gui-my-duyen-02347-3-415",
+          "recipientId": "my-duyen-02347",
+          "sender": "Bạn nam SoDiTEC",
+          "message": "Chúc chị có một ngày 20/10 thật hạnh phúc, SoDiTEC luôn bên chị",
+          "order": 3
+        },
+        {
+          "id": "gui-bao-thu-09202-1-948",
+          "recipientId": "bao-thu-09202",
+          "sender": "Ẩn danh",
+          "message": "Chúc chị có một ngày 20/10 ngập tràn hoa và quà",
+          "order": 1
+        },
+        {
+          "id": "gui-bao-thu-09202-2-852",
+          "recipientId": "bao-thu-09202",
+          "sender": "Bạn nam SoDiTEC",
+          "message": "Chúc chị có một ngày 20/10 thật hạnh phúc, SoDiTEC luôn bên chị",
+          "order": 2
+        },
+        {
+          "id": "gui-bao-thu-09202-3-663",
+          "recipientId": "bao-thu-09202",
+          "sender": "Sâu đực",
+          "message": "Chúc chị luôn giỏi giang và xinh đẹp, em ngưỡng mộ chị lắm",
+          "order": 3
+        },
+        {
+          "id": "gui-linh-duyen-92345-1-914",
+          "recipientId": "linh-duyen-92345",
+          "sender": "Bạn nam SoDiTEC",
+          "message": "Chúc chị có một ngày 20/10 thật hạnh phúc, SoDiTEC luôn bên chị",
+          "order": 1
+        },
+        {
+          "id": "gui-linh-duyen-92345-2-843",
+          "recipientId": "linh-duyen-92345",
+          "sender": "Sâu đực",
+          "message": "Chúc chị luôn giỏi giang và xinh đẹp, em ngưỡng mộ chị lắm",
+          "order": 2
+        },
+        {
+          "id": "gui-linh-duyen-92345-3-260",
+          "recipientId": "linh-duyen-92345",
+          "sender": "Ẩn danh",
+          "message": "Chúc chị có một ngày 20/10 ngập tràn hoa và quà",
+          "order": 3
+        },
+        {
+          "id": "gui-bich-phuong-99999-1-416",
+          "recipientId": "bich-phuong-99999",
+          "sender": "Mạnh Hùng",
+          "message": "Em chúc cô Phương mãi teen, mãi funnn. Chúng em rất vui khi được đồng hành cùng cô ạ, chúng em luôn sẵn sàng cho dự án tiếp theo và những buổi bonding sắp tới ạ:>",
+          "order": 1
+        },
+        {
+          "id": "gui-bich-phuong-99999-2-481",
+          "recipientId": "bich-phuong-99999",
+          "sender": "Bạn nam SoDiTEC",
+          "message": "Chúng em chúc cô Phương có một ngày 20/10 thật hạnh phúc bên người thân yêu ạ",
+          "order": 2
+        },
+        {
+          "id": "gui-bich-phuong-99999-3-574",
+          "recipientId": "bich-phuong-99999",
+          "sender": "Bạn nam SoDiTEC",
+          "message": "Nhân dịp 20/10, em chúc cô luôn tìm thấy niềm vui, tiếng cười qua từng tiết dạy tiếng Nhật ạ",
+          "order": 3
+        },
+        {
+          "id": "gui-hanh-nguyen-86868-1-678",
+          "recipientId": "hanh-nguyen-86868",
+          "sender": "Mạnh Hùng",
+          "message": "20/10 em chúc chị Nguyên luôn ngập tràn hạnh phúc trong các dự án, xiền đếm không xuể. Các bạn SoDiTEC luôn sẵn sàng hỗ trợ chị và EdTech mọi lúc, mọi nơi, chưa cần gọi cũng có mặt ạ.",
+          "order": 1
+        },
+        {
+          "id": "gui-hanh-nguyen-86868-2-822",
+          "recipientId": "hanh-nguyen-86868",
+          "sender": "Bạn nam SoDiTEC",
+          "message": "Nhân ngày 20/10, em chúc chị Nguyên mãi trẻ trung, xinh đẹp, giỏi giang ạ",
+          "order": 2
+        },
+        {
+          "id": "gui-hanh-nguyen-86868-3-829",
+          "recipientId": "hanh-nguyen-86868",
+          "sender": "Bạn nam SoDiTEC",
+          "message": "Chúc chị có một ngày 20/10 thật tuyệt vời, nhận được nhiều nến và hoa<3",
+          "order": 3
+        },
+        {
+          "id": "b8c9fcf9-c7dc-4a2e-9a17-b6cf820dcaf5",
+          "recipientId": "fcd4ec65-9993-4ef9-9516-396a78c1f930",
+          "sender": "Các bạn nam SoDiTEC",
+          "message": "Gửi tới các cậu những điều tốt đẹp nhất. \nCảm ơn các cậu vì đã ở đây, là một phần của SoDiTEC, là những bông hoa đẹp nhất trong một vườn hoa, mang đến sắc, niềm vui, tiếng cười, làn gió mới thổi vào tâm hồn chúng tớ.\nChúng tớ luôn ở đây, đồng hành cùng các cậu, cùng nhau giao lưu, cùng nhau xây dựng CLB SoDiTEC. Nếu hôm nay có là một ngày không vui, thì luôn có chúng tớ ở đây để cậu sẻ chia; nếu chúng tớ thấy buồn, thì các cậu cũng chính là nguồn động lực to lớn nhất để chúng tớ tiếp tục phấn đấu.\nNgày hôm nay, hãy tận hưởng tấm lòng của chúng tớ nhé <3",
+          "order": 125
+        }
+      ]
     }
   ],
   "isDemo": false

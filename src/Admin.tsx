@@ -32,7 +32,7 @@ import {
   wishesFor,
 } from "./model";
 import { download, loadDraft, readFile, saveDraft, optimizePhoto } from "./storage";
-import { videoId } from "./YouTube";
+import { videoId, isValidVideoUrl, isVideoFile } from "./media";
 type Tab = "overview" | "event" | "people" | "wishes" | "import" | "publish";
 const tabs = [
   ["overview", "Tổng quan", LayoutDashboard],
@@ -193,8 +193,8 @@ export function Admin({
   function savePerson(e: React.FormEvent) {
     e.preventDefault();
     if (!person) return;
-    if (person.videoUrl && !videoId(person.videoUrl)) {
-      setNotice("Video riêng phải là đường dẫn YouTube hợp lệ.");
+    if (person.videoUrl && !isValidVideoUrl(person.videoUrl)) {
+      setNotice("Video riêng phải là đường dẫn YouTube hoặc tệp video hợp lệ.");
       return;
     }
     if (
@@ -237,6 +237,37 @@ export function Admin({
     } catch (e) {
       setNotice((e as Error).message);
     }
+  }
+  async function uploadMediaFile(file: File): Promise<string> {
+    if (file.size > 1024 * 1024 * 1024) {
+      throw new Error("Chọn tệp video hợp lệ, tối đa 1 GB.");
+    }
+    try {
+      const res = await fetch(
+        `/api/admin/media?name=${encodeURIComponent(file.name)}`,
+        {
+          method: "POST",
+          headers: { "Content-Type": file.type || "application/octet-stream" },
+          body: file,
+        },
+      );
+      if (res.ok) {
+        const json = await res.json();
+        if (json.url) return json.url;
+      } else {
+        const errJson = await res.json().catch(() => ({}));
+        if (errJson.error) throw new Error(errJson.error);
+      }
+    } catch (err) {
+      if ((err as Error).message.includes("1 GB")) throw err;
+      if (file.size <= 30 * 1024 * 1024) {
+        return readFile(file);
+      }
+      throw new Error(
+        "Không thể tải tệp video lên máy chủ. " + ((err as Error).message || ""),
+      );
+    }
+    return readFile(file);
   }
   function saveWish(e: React.FormEvent) {
     e.preventDefault();
@@ -631,16 +662,62 @@ export function Admin({
                 <label>
                   Video YouTube mặc định
                   <input
-                    placeholder="https://www.youtube.com/watch?v=…"
-                    value={event.videoUrl}
-                    onChange={(e) => updateEvent({ videoUrl: e.target.value })}
+                    placeholder="https://www.youtube.com/watch?v=… hoặc chọn tệp bên dưới"
+                    value={event.videoUrl && isVideoFile(event.videoUrl) ? (event.videoUrl.startsWith("data:") ? "" : event.videoUrl) : event.videoUrl}
+                    onChange={(e) => updateEvent({ videoUrl: e.target.value.trim() })}
                   />
-                  {event.videoUrl && !videoId(event.videoUrl) && (
+                  <small>Dán đường dẫn YouTube hoặc chọn tệp video (MP4, WebM...) dùng chung bên dưới.</small>
+                  {event.videoUrl && !isValidVideoUrl(event.videoUrl) && (
                     <small className="field-error">
-                      Đường dẫn YouTube chưa hợp lệ.
+                      Đường dẫn YouTube hoặc tệp video chưa hợp lệ.
                     </small>
                   )}
                 </label>
+                <label>
+                  Tải tệp video chung
+                  <input
+                    type="file"
+                    accept="video/mp4,video/webm,video/ogg,video/quicktime,video/*"
+                    aria-label="Tải tệp video chung"
+                    onChange={async (e) => {
+                      const f = e.target.files?.[0];
+                      try {
+                        if (f) {
+                          if (!f.type.startsWith("video/") && !/\.(mp4|webm|ogg|mov|m4v)$/i.test(f.name))
+                            throw new Error("Chọn tệp video hợp lệ (MP4, WebM, OGG...).");
+                          setNotice("Đang tải tệp video lên máy chủ…");
+                          const url = await uploadMediaFile(f);
+                          updateEvent({ videoUrl: url });
+                          setNotice("Đã tải tệp video chung thành công.");
+                        }
+                      } catch (err) {
+                        setNotice((err as Error).message);
+                      }
+                      e.target.value = "";
+                    }}
+                  />
+                  <small>
+                    {event.videoUrl
+                      ? isVideoFile(event.videoUrl)
+                        ? "Đã có tệp video chung tải lên."
+                        : "Đang dùng video YouTube."
+                      : "Chưa chọn video chung."}
+                  </small>
+                </label>
+                {event.videoUrl && (
+                  <div className="admin-video-preview">
+                    {isVideoFile(event.videoUrl) && (
+                      <video controls src={event.videoUrl} style={{ width: "100%", maxHeight: "180px", borderRadius: "8px", marginTop: "4px" }} />
+                    )}
+                    <button
+                      type="button"
+                      className="text-button"
+                      onClick={() => updateEvent({ videoUrl: "" })}
+                    >
+                      Gỡ video chung
+                    </button>
+                  </div>
+                )}
                 <label>
                   Nhạc nền
                   <input
@@ -1146,11 +1223,57 @@ export function Admin({
             </label>
             <label>
               Video YouTube riêng
-              <input value={person.videoUrl || ""} placeholder="https://www.youtube.com/watch?v=…"
+              <input value={person.videoUrl && isVideoFile(person.videoUrl) ? (person.videoUrl.startsWith("data:") ? "" : person.videoUrl) : (person.videoUrl || "")}
+                placeholder="https://www.youtube.com/watch?v=… hoặc chọn tệp bên dưới"
                 onChange={e => setPerson({ ...person, videoUrl: e.target.value.trim() })} />
-              <small>Để trống để dùng video chung của sự kiện. Nếu có video riêng, bạn có thể chọn cách xem bên dưới.</small>
-              {person.videoUrl && !videoId(person.videoUrl) && <small className="field-error">Đường dẫn YouTube chưa hợp lệ.</small>}
+              <small>Để trống để dùng video chung của sự kiện. Nếu có video riêng, bạn có thể nhập link YouTube hoặc chọn tệp bên dưới.</small>
+              {person.videoUrl && !isValidVideoUrl(person.videoUrl) && <small className="field-error">Đường dẫn YouTube hoặc tệp video chưa hợp lệ.</small>}
             </label>
+            <label>
+              Tải tệp video riêng
+              <input
+                type="file"
+                accept="video/mp4,video/webm,video/ogg,video/quicktime,video/*"
+                aria-label="Tải tệp video riêng"
+                onChange={async (e) => {
+                  const f = e.target.files?.[0];
+                  try {
+                    if (f) {
+                      if (!f.type.startsWith("video/") && !/\.(mp4|webm|ogg|mov|m4v)$/i.test(f.name))
+                        throw new Error("Chọn tệp video hợp lệ (MP4, WebM, OGG...).");
+                      setNotice("Đang tải tệp video lên máy chủ…");
+                      const url = await uploadMediaFile(f);
+                      setPerson({ ...person, videoUrl: url });
+                      setNotice("Đã tải tệp video riêng thành công.");
+                    }
+                  } catch (err) {
+                    setNotice((err as Error).message);
+                  }
+                  e.target.value = "";
+                }}
+              />
+              <small>
+                {person.videoUrl
+                  ? isVideoFile(person.videoUrl)
+                    ? "Đã có tệp video riêng tải lên."
+                    : "Đang dùng video YouTube riêng."
+                  : "Chưa chọn video riêng."}
+              </small>
+            </label>
+            {person.videoUrl && (
+              <div className="admin-video-preview">
+                {isVideoFile(person.videoUrl) && (
+                  <video controls src={person.videoUrl} style={{ width: "100%", maxHeight: "180px", borderRadius: "8px", marginTop: "4px" }} />
+                )}
+                <button
+                  type="button"
+                  className="text-button"
+                  onClick={() => setPerson({ ...person, videoUrl: "" })}
+                >
+                  Gỡ video riêng
+                </button>
+              </div>
+            )}
             {person.videoUrl && <label>
               Cách xem video
               <select value={person.videoMode || "both"}
