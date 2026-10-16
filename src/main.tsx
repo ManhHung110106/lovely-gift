@@ -17,19 +17,18 @@ async function boot() {
       const errors = validateStore(data);
       if (errors.length) throw new Error(errors.join(" "));
       store = data;
-      store.events.forEach((e) =>
-        e.recipients.forEach(
-          (p) =>
-            (p.photos = p.photos.map((url) =>
-              url.startsWith("/demo/") || url.startsWith("/media/")
-                ? import.meta.env.BASE_URL + url.slice(1)
-                : url,
-            )),
-        ),
-      );
+      const prefixMedia = (url: string | undefined) =>
+        url && (url.startsWith("/demo/") || url.startsWith("/media/"))
+          ? import.meta.env.BASE_URL + url.slice(1)
+          : url;
+
       store.events.forEach((e) => {
-        if (e.musicUrl.startsWith("/media/"))
-          e.musicUrl = import.meta.env.BASE_URL + e.musicUrl.slice(1);
+        if (e.videoUrl) e.videoUrl = prefixMedia(e.videoUrl) || "";
+        if (e.musicUrl) e.musicUrl = prefixMedia(e.musicUrl) || "";
+        e.recipients.forEach((p) => {
+          p.photos = p.photos.map((url) => prefixMedia(url) || url);
+          if (p.videoUrl) p.videoUrl = prefixMedia(p.videoUrl);
+        });
       });
     } catch (e) {
       console.error(e);
